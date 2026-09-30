@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - CompFast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amazon: {
+                            DEFAULT: '#131921',
+                            light: '#232f3e',
+                            yellow: '#febd69',
+                            orange: '#f08804'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-amazon text-white flex flex-col">
+        <div class="p-4 bg-amazon-light flex items-center justify-center border-b border-gray-700">
+            <h1 class="text-xl font-bold text-amazon-yellow">CompFast Admin</h1>
+        </div>
+
+        <nav class="flex-1 px-2 py-4 space-y-2">
+            <a href="#/" class="block px-4 py-2 rounded hover:bg-amazon-light transition-colors">Dashboard</a>
+            <a href="#/categorias" class="block px-4 py-2 rounded hover:bg-amazon-light transition-colors">Categorias</a>
+            <a href="#/produtos" class="block px-4 py-2 rounded hover:bg-amazon-light transition-colors">Produtos</a>
+            <a href="#/cupons" class="block px-4 py-2 rounded hover:bg-amazon-light transition-colors">Cupons</a>
+            <a href="#/promocoes" class="block px-4 py-2 rounded hover:bg-amazon-light transition-colors">Promoções</a>
+            <a href="#/pedidos" class="block px-4 py-2 rounded hover:bg-amazon-light transition-colors">Gestão de Pedidos</a>
+        </nav>
+
+        <div class="p-4 bg-amazon-light text-sm text-center text-gray-400">
+            <a href="/" class="hover:text-white underline">Ir para a Loja</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-hidden">
+        <!-- Top header -->
+        <header class="bg-white shadow-sm border-b p-4 flex justify-between items-center z-10">
+            <h2 id="page-title" class="text-xl font-semibold text-gray-800">Carregando...</h2>
+            <div class="flex items-center text-gray-600">
+                <span>Administrador</span>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <div id="admin-content" class="flex-1 overflow-y-auto p-6 relative bg-gray-50">
+            <!-- Content gets injected here by JS -->
+            <div class="flex justify-center items-center h-full">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-amazon-orange"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Container for Forms -->
+    <div id="modal-container" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div id="modal-content" class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 relative">
+            <button onclick="window.closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl font-bold">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
