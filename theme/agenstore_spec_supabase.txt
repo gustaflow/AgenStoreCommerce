@@ -1,0 +1,10 @@
+# AgenStore — Especificação Técnica e Esquema Supabase
+- **E-commerce AgenStore**
+- **Painel Administrativo (Loja)**:
+  - Categorias, Produtos (fotos via Supabase Storage), Cupons, Promoções com expiração
+  - Gestão de Vendas (Pedidos) e Clientes
+- **Loja Cliente (SPA/PWA)**:
+  - Estilo Amazon / Mercado Livre (busca proeminente, deals/promoções com timer, badges de desconto)
+  - Lista de produtos em destaque e categorias
+  - Carrinho & Primeiro Checkout com criação de conta/endereço
+- **Paleta / Visual**: Amazon-inspired (#131921 navy, #232f3e slate blue, #febd69 / #f08804 amazon orange accent, #ffffff cards, clean layout).

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>AgenStore - Painel de Controle Lojista</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#45474b", "on-tertiary-fixed": "#3d0600", "on-tertiary-container": "#e94e2b", "on-tertiary-fixed-variant": "#8b1a00", "on-secondary": "#ffffff", "on-primary": "#ffffff", "inverse-surface": "#2e3132", "surface-variant": "#e1e2e4", "on-surface": "#191c1e", "on-secondary-fixed": "#2a1700", "surface-container-low": "#f3f4f6", "surface-container-highest": "#e1e2e4", "tertiary-fixed-dim": "#ffb4a3", "secondary-fixed": "#ffddb7", "background": "#f8f9fb", "secondary-fixed-dim": "#fbba67", "on-tertiary": "#ffffff", "on-primary-fixed": "#161c24", "on-error-container": "#93000a", "primary": "#000000", "primary-fixed": "#dde3ee", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#653e00", "on-background": "#191c1e", "secondary-container": "#febd69", "on-primary-container": "#7e848e", "on-primary-fixed-variant": "#414750", "primary-container": "#161c24", "tertiary": "#000000", "surface-tint": "#595f68", "secondary": "#845403", "error": "#ba1a1a", "surface-container-high": "#e7e8ea", "on-error": "#ffffff", "surface-bright": "#f8f9fb", "tertiary-container": "#3d0600", "inverse-on-surface": "#f0f1f3", "surface-container-lowest": "#ffffff", "on-secondary-container": "#774b00", "surface-container": "#edeef0", "surface": "#f8f9fb", "primary-fixed-dim": "#c1c7d2", "inverse-primary": "#c1c7d2", "outline": "#75777c", "surface-dim": "#d9dadc", "outline-variant": "#c5c6cb", "tertiary-fixed": "#ffdad2" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-base": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "space-2xl": "3rem", "space-md": "0.75rem", "space-2xs": "0.125rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.25rem" }, "fontFamily": { "body-sm": ["Inter"], "price-display-sm": ["Inter"], "body-lg": ["Inter"], "price-display": ["Inter"], "code-tabular": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "label-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "price-display-sm": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "price-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "code-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "0", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-space-lg pb-space-lg shadow-[1px_0_4px_rgba(0,0,0,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><img alt="AgenStore Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYW7_7TXF9ZKGZoHQ_aHhrK958wiNqS6kCGHzEkFrICLPb5CydaEoYa83zLuKXX-uiLN8v28wjcKysHxE8fhYzVwJxwZzlFJRVhM11f89U1gljGirDkmyt5ES6sfZrnWpIwawGz7nXHsoOecW3ce1BQgXDxppikIImqOpg8c7G0rlwKjwtttmY78sEVhu5RIALDiYoAfP1Kresy6XCaar50uTk7wLMw4lnshDpGX7xcizZZBlUApjW1sg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">AgenStore</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Lojista Pro</span></div></div><div class="px-space-md mb-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-[#10b981]"></span><span class="font-label-sm text-label-sm font-medium">Supabase Live DB</span></div></div><nav class="flex-1 px-space-sm flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Visão Geral</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-semibold" data-path="admin-pedidos" href="#"><span class="material-symbols-outlined text-[20px]">orders</span><span class="font-label-md text-label-md">Pedidos & Vendas</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-produtos" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-md text-label-md">Catálogo & Estoque</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-financeiro" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Financeiro & Repasses</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-configuracoes" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Configurações Loja</span></a></nav><div class="px-space-md pt-space-md border-t border-surface-container-high"><a class="flex items-center justify-center gap-space-xs w-full py-space-sm rounded bg-surface-container-highest text-on-surface hover:bg-surface-variant transition-colors font-label-md text-label-md font-semibold" data-path="home" href="#"><span class="material-symbols-outlined text-[18px]">storefront</span><span>Voltar para a Loja</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest z-40 flex items-center justify-between px-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="material-symbols-outlined text-[20px]">corporate_fare</span><span class="font-label-md text-label-md font-semibold text-on-surface">Operações da Loja Principal</span></div><div class="flex items-center gap-space-lg"><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-on-surface font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-relatorios" href="#">Relatórios de Vendas</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-promocoes" href="#">Campanhas Ativas</a></nav><div class="flex items-center gap-space-md pl-space-sm border-l border-surface-container-high"><button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded-full hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZaYnjtVb8FKUh9tl5-ywY-mQ-F07fKWV0weZee1VjExvoZqvP-kAGVSn4qbjyCCkUZuf4iQ0Lb6sTbCwd55QajE3HGjJiOwOPGuFn-rRM_qIW2kJBHHiedTxGhX4Km72L6RMk5-c6lVCH7rKSYAUqkHVJM9xHDTD7DbTUdM3hWWE40rfguvNK1IjYNBlArf0QM6S26H0sPJf_bKjdBlchfTa1BQPKUpYIEHfgV3RYyOUwvTOTf1hr"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md font-bold text-on-surface leading-none">Administrador</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">admin@agenstore.com</span></div></div></div></div></header><main class="w-full pt-16 min-h-screen bg-background px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- Banner Informativo Arquitetural -->
+<div class="mb-space-lg p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="p-space-xs rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Arquitetura de Vendas Diretas • Supabase Engine</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Modelo simplificado sem transportadora ou emissão fiscal, focado em conversão e controle imediato de estoque via Postgres triggers.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-container-lowest rounded text-on-surface-variant font-code-tabular text-code-tabular">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>Postgres Triggers Ativos</span>
+</div>
+</div>
+<!-- Métricas Chave do Dia (Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md mb-space-xl">
+<!-- Card 1: Total Vendas Hoje -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Vendas Hoje</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">payments</span>
+</div>
+<div class="font-price-display text-price-display text-on-surface">R$ 4.820,00</div>
+<div class="flex items-center gap-space-2xs mt-space-xs font-body-sm text-body-sm text-emerald-600">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+14.8% vs. ontem</span>
+</div>
+</div>
+<!-- Card 2: Pedidos Concluídos (Pago) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Concluídos (Pago)</span>
+<span class="material-symbols-outlined text-[18px] text-emerald-600">check_circle</span>
+</div>
+<div class="font-price-display text-price-display text-on-surface">28 <span class="font-body-md text-body-md text-on-surface-variant font-normal">pedidos</span></div>
+<div class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">Taxa de liquidação: 93.3%</div>
+</div>
+<!-- Card 3: Pedidos Cancelados -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Cancelados</span>
+<span class="material-symbols-outlined text-[18px] text-error">cancel</span>
+</div>
+<div class="font-price-display text-price-display text-error">2 <span class="font-body-md text-body-md text-on-surface-variant font-normal">pedidos</span></div>
+<div class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">Estoque estornado via trigger</div>
+</div>
+<!-- Card 4: Ticket Médio -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Ticket Médio</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">analytics</span>
+</div>
+<div class="font-price-display text-price-display text-on-surface">R$ 172,14</div>
+<div class="mt-space-xs font-body-sm text-body-sm text-emerald-600">Alta de R$ 18,20 no dia</div>
+</div>
+<!-- Card 5: Total Clientes Cadastrados -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Clientes Cadastrados</span>
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+</div>
+<div class="font-price-display text-price-display text-on-surface">142 <span class="font-body-md text-body-md text-on-surface-variant font-normal">contas</span></div>
+<div class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">+6 cadastrados no 1º checkout</div>
+</div>
+</div>
+<!-- Navegação de Abas e Filtros -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md mb-space-md">
+<!-- Abas -->
+<div class="flex bg-surface-container p-space-2xs rounded-lg self-start">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded font-label-md text-label-md font-semibold transition-all bg-surface-container-lowest text-on-surface shadow-sm" id="tab-pedidos-btn" onclick="switchTab('pedidos')" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Pedidos Realizados</span>
+<span class="ml-space-2xs px-space-xs py-0 rounded-full bg-surface-container-highest text-on-surface-variant text-[11px]">30</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded font-label-md text-label-md font-semibold transition-all text-on-surface-variant hover:text-on-surface" id="tab-clientes-btn" onclick="switchTab('clientes')" type="button">
+<span class="material-symbols-outlined text-[18px]">person_search</span>
+<span>Base de Clientes</span>
+<span class="ml-space-2xs px-space-xs py-0 rounded-full bg-surface-container-highest text-on-surface-variant text-[11px]">142</span>
+</button>
+</div>
+<!-- Barra de Ações / Busca Rápida -->
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1 sm:w-72">
+<span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm outline-none ring-0 placeholder:text-on-surface-variant shadow-sm hover:shadow transition-shadow" id="view-search-input" placeholder="Buscar por ID, cliente ou e-mail..." type="text"/>
+</div>
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container transition-colors shadow-sm flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span class="hidden md:inline">Exportar CSV</span>
+</button>
+</div>
+</div>
+<!-- CONTEÚDO DA ABA: PEDIDOS REALIZADOS -->
+<div class="flex flex-col w-full" id="section-pedidos">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-space-sm px-space-md font-semibold">ID Pedido</th>
+<th class="py-space-sm px-space-md font-semibold">Data / Hora</th>
+<th class="py-space-sm px-space-md font-semibold">Cliente</th>
+<th class="py-space-sm px-space-md font-semibold">Itens (Preço Fixo)</th>
+<th class="py-space-sm px-space-md font-semibold">Cupom</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Subtotal</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Desconto</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Total</th>
+<th class="py-space-sm px-space-md font-semibold text-center">Status</th>
+<th class="py-space-sm px-space-md font-semibold text-center">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Pedido 1: Pago -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-code-tabular text-code-tabular font-bold text-on-surface">#AG-9042</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">Hoje, 14:32</td>
+<td class="py-space-md px-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Marcos Silveira Rocha</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm leading-tight">marcos.silveira@email.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">inventory_2</span>
+<span class="font-medium">2 itens</span>
+</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-xs">Mouse Gamer Pro (R$ 159,90) + Teclado Mec...</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-space-2xs bg-secondary-container/40 text-on-secondary-fixed-variant rounded font-code-tabular text-[11px] font-semibold">BEMVINDO10</span>
+</td>
+<td class="py-space-md px-space-md text-right text-on-surface font-code-tabular">R$ 389,80</td>
+<td class="py-space-md px-space-md text-right text-error font-code-tabular">- R$ 38,98</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface">R$ 350,82</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  pago
+                </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-space-xs" onclick="openOrderModal('AG-9042', 'Marcos Silveira Rocha', 'marcos.silveira@email.com', 'BEMVINDO10', 'R$ 389,80', '- R$ 38,98', 'R$ 350,82', 'pago', 'Rua das Palmeiras, 450, Apto 802', 'Centro', 'Curitiba', 'PR', '80020-000')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Detalhes</span>
+</button>
+</td>
+</tr>
+<!-- Pedido 2: Pago -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-code-tabular text-code-tabular font-bold text-on-surface">#AG-9041</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">Hoje, 13:58</td>
+<td class="py-space-md px-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Juliana Mendes Dias</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm leading-tight">juliana.mendes@icloud.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">inventory_2</span>
+<span class="font-medium">1 item</span>
+</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-xs">Fone Bluetooth Active ANC (R$ 289,00)</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-on-surface-variant text-[11px] font-medium">—</span>
+</td>
+<td class="py-space-md px-space-md text-right text-on-surface font-code-tabular">R$ 289,00</td>
+<td class="py-space-md px-space-md text-right text-on-surface-variant font-code-tabular">R$ 0,00</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface">R$ 289,00</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  pago
+                </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-space-xs" onclick="openOrderModal('AG-9041', 'Juliana Mendes Dias', 'juliana.mendes@icloud.com', '—', 'R$ 289,00', 'R$ 0,00', 'R$ 289,00', 'pago', 'Av. Paulista, 1578, Conj. 12B', 'Bela Vista', 'São Paulo', 'SP', '01310-200')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Detalhes</span>
+</button>
+</td>
+</tr>
+<!-- Pedido 3: Cancelado -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-code-tabular text-code-tabular font-bold text-on-surface">#AG-9040</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">Hoje, 12:15</td>
+<td class="py-space-md px-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Rodrigo Castro Nogueira</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm leading-tight">rodrigo.castro@gmail.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">inventory_2</span>
+<span class="font-medium">1 item</span>
+</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-xs">Smartwatch AgenTrack V2 (R$ 499,00)</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-space-2xs bg-secondary-container/40 text-on-secondary-fixed-variant rounded font-code-tabular text-[11px] font-semibold">AGENOFF50</span>
+</td>
+<td class="py-space-md px-space-md text-right text-on-surface font-code-tabular">R$ 499,00</td>
+<td class="py-space-md px-space-md text-right text-error font-code-tabular">- R$ 50,00</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface-variant line-through">R$ 449,00</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  cancelado
+                </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-space-xs" onclick="openOrderModal('AG-9040', 'Rodrigo Castro Nogueira', 'rodrigo.castro@gmail.com', 'AGENOFF50', 'R$ 499,00', '- R$ 50,00', 'R$ 449,00', 'cancelado', 'Rua Visconde de Pirajá, 300, Apt 501', 'Ipanema', 'Rio de Janeiro', 'RJ', '22410-002')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Detalhes</span>
+</button>
+</td>
+</tr>
+<!-- Pedido 4: Pago -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-code-tabular text-code-tabular font-bold text-on-surface">#AG-9039</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">Hoje, 11:40</td>
+<td class="py-space-md px-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Beatriz Lins Fagundes</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm leading-tight">beatriz.fagundes@outlook.com</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">inventory_2</span>
+<span class="font-medium">3 itens</span>
+</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-xs">Hub USB-C 7 em 1 + 2 Cabos Trançados</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-space-xs py-space-2xs bg-secondary-container/40 text-on-secondary-fixed-variant rounded font-code-tabular text-[11px] font-semibold">BEMVINDO10</span>
+</td>
+<td class="py-space-md px-space-md text-right text-on-surface font-code-tabular">R$ 215,00</td>
+<td class="py-space-md px-space-md text-right text-error font-code-tabular">- R$ 21,50</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface">R$ 193,50</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  pago
+                </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-space-xs" onclick="openOrderModal('AG-9039', 'Beatriz Lins Fagundes', 'beatriz.fagundes@outlook.com', 'BEMVINDO10', 'R$ 215,00', '- R$ 21,50', 'R$ 193,50', 'pago', 'Av. Afonso Pena, 2200, Sala 405', 'Funcionários', 'Belo Horizonte', 'MG', '30130-007')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Detalhes</span>
+</button>
+</td>
+</tr>
+<!-- Pedido 5: Pago -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-code-tabular text-code-tabular font-bold text-on-surface">#AG-9038</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">Hoje, 10:04</td>
+<td class="py-space-md px-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Felipe Dantas Alencar</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm leading-tight">felipe.alencar@techcorp.com.br</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">inventory_2</span>
+<span class="font-medium">1 item</span>
+</div>
+<div class="text-on-surface-variant text-[11px] truncate max-w-xs">Suporte Ergonômico de Alumínio (R$ 145,00)</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-on-surface-variant text-[11px] font-medium">—</span>
+</td>
+<td class="py-space-md px-space-md text-right text-on-surface font-code-tabular">R$ 145,00</td>
+<td class="py-space-md px-space-md text-right text-on-surface-variant font-code-tabular">R$ 0,00</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface">R$ 145,00</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-full bg-emerald-50 text-emerald-800 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  pago
+                </span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md font-semibold transition-colors inline-flex items-center gap-space-xs" onclick="openOrderModal('AG-9038', 'Felipe Dantas Alencar', 'felipe.alencar@techcorp.com.br', '—', 'R$ 145,00', 'R$ 0,00', 'R$ 145,00', 'pago', 'Rua dos Andradas, 890', 'Centro Histórico', 'Porto Alegre', 'RS', '90020-005')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Detalhes</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginação / Rodapé de Tabela -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Exibindo 5 de 30 pedidos recentes</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface disabled:opacity-50" disabled="" type="button">Anterior</button>
+<button class="px-space-sm py-space-xs rounded bg-primary-container text-on-primary font-semibold" type="button">1</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface" type="button">2</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface" type="button">Próximo</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CONTEÚDO DA ABA: BASE DE CLIENTES -->
+<div class="hidden flex flex-col w-full" id="section-clientes">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-space-sm px-space-md font-semibold">Cliente</th>
+<th class="py-space-sm px-space-md font-semibold">Contato</th>
+<th class="py-space-sm px-space-md font-semibold">Endereço (1º Checkout)</th>
+<th class="py-space-sm px-space-md font-semibold text-center">Pedidos</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Total Investido</th>
+<th class="py-space-sm px-space-md font-semibold">Data Cadastro</th>
+<th class="py-space-sm px-space-md font-semibold text-center">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Cliente 1 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container/40 text-on-secondary-fixed-variant flex items-center justify-center font-bold font-label-md">MS</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Marcos Silveira Rocha</div>
+<div class="text-on-surface-variant text-[11px]">ID: 80e34c2b-d68a-4933</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface leading-tight">marcos.silveira@email.com</div>
+<div class="text-on-surface-variant text-[11px] font-code-tabular">(41) 98842-1109</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface leading-tight">Rua das Palmeiras, 450 - Apto 802</div>
+<div class="text-on-surface-variant text-[11px]">Curitiba - PR • CEP 80020-000</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container text-on-surface font-code-tabular font-bold">3 pedidos</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface">R$ 1.120,40</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">03/10/2023</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" title="Ver Perfil Completo" type="button">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+</button>
+</td>
+</tr>
+<!-- Cliente 2 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold font-label-md">JM</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Juliana Mendes Dias</div>
+<div class="text-on-surface-variant text-[11px]">ID: 41b12d90-84fe-48aa</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface leading-tight">juliana.mendes@icloud.com</div>
+<div class="text-on-surface-variant text-[11px] font-code-tabular">(11) 97120-8841</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface leading-tight">Av. Paulista, 1578 - Conj. 12B</div>
+<div class="text-on-surface-variant text-[11px]">São Paulo - SP • CEP 01310-200</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container text-on-surface font-code-tabular font-bold">1 pedido</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface">R$ 289,00</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">Hoje, 13:50</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" title="Ver Perfil Completo" type="button">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+</button>
+</td>
+</tr>
+<!-- Cliente 3 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container/40 text-on-secondary-fixed-variant flex items-center justify-center font-bold font-label-md">RC</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Rodrigo Castro Nogueira</div>
+<div class="text-on-surface-variant text-[11px]">ID: 69c73a11-39ec-4122</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface leading-tight">rodrigo.castro@gmail.com</div>
+<div class="text-on-surface-variant text-[11px] font-code-tabular">(21) 99341-9012</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface leading-tight">Rua Visconde de Pirajá, 300 - Apt 501</div>
+<div class="text-on-surface-variant text-[11px]">Rio de Janeiro - RJ • CEP 22410-002</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container text-on-surface font-code-tabular font-bold">2 pedidos</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface">R$ 640,00</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">15/11/2023</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" title="Ver Perfil Completo" type="button">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+</button>
+</td>
+</tr>
+<!-- Cliente 4 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold font-label-md">BL</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight">Beatriz Lins Fagundes</div>
+<div class="text-on-surface-variant text-[11px]">ID: 18f92100-33da-47bb</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface leading-tight">beatriz.fagundes@outlook.com</div>
+<div class="text-on-surface-variant text-[11px] font-code-tabular">(31) 98701-4455</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface leading-tight">Av. Afonso Pena, 2200 - Sala 405</div>
+<div class="text-on-surface-variant text-[11px]">Belo Horizonte - MG • CEP 30130-007</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container text-on-surface font-code-tabular font-bold">5 pedidos</span>
+</td>
+<td class="py-space-md px-space-md text-right font-price-display-sm text-price-display-sm text-on-surface">R$ 1.890,20</td>
+<td class="py-space-md px-space-md text-on-surface-variant whitespace-nowrap">22/08/2023</td>
+<td class="py-space-md px-space-md text-center">
+<button class="p-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface transition-colors" title="Ver Perfil Completo" type="button">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Rodapé Clientes -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Exibindo 4 de 142 clientes cadastrados</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface disabled:opacity-50" disabled="" type="button">Anterior</button>
+<button class="px-space-sm py-space-xs rounded bg-primary-container text-on-primary font-semibold" type="button">1</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface" type="button">2</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container hover:bg-surface-variant text-on-surface" type="button">Próximo</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL / DRAWER DE DETALHES DO PEDIDO (JSONB & Itens com Preço Congelado) -->
+<div class="fixed inset-0 bg-neutral-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-space-md" id="order-modal-backdrop">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-in fade-in zoom-in-95 duration-150">
+<!-- Cabeçalho do Modal -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="p-space-xs rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">receipt</span>
+</div>
+<div>
+<div class="flex items-center gap-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold" id="modal-order-id">#AG-9042</h3>
+<span class="px-space-xs py-space-2xs rounded-full font-label-sm text-label-sm font-semibold uppercase" id="modal-order-status">pago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instantâneo congelado no momento da compra (pedidos & pedido_itens)</p>
+</div>
+</div>
+<button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded-full hover:bg-surface-container transition-colors" onclick="closeOrderModal()" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Corpo do Modal Rolável -->
+<div class="p-space-lg overflow-y-auto space-y-space-lg flex-1">
+<!-- Bloco 1: Itens com Preço Congelado -->
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Itens do Pedido</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Preços unitários fixados (Trigger Lock)</span>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm space-y-space-sm">
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface-variant font-bold">1x</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface">Mouse Gamer Pro RGB 16000DPI</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">SKU: PROD-MOU-01 • Preço no Checkout: R$ 159,90</div>
+</div>
+</div>
+<div class="font-price-display-sm text-price-display-sm text-on-surface">R$ 159,90</div>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface-variant font-bold">1x</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface">Teclado Mecânico Compact Switch Red</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">SKU: PROD-KB-04 • Preço no Checkout: R$ 229,90</div>
+</div>
+</div>
+<div class="font-price-display-sm text-price-display-sm text-on-surface">R$ 229,90</div>
+</div>
+</div>
+</div>
+<!-- Bloco 2: Totais e Cupom -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal Bruto:</span>
+<span class="font-code-tabular text-on-surface" id="modal-subtotal">R$ 389,80</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Cupom Aplicado (<span class="font-code-tabular font-bold text-on-surface" id="modal-coupon">BEMVINDO10</span>):</span>
+<span class="font-code-tabular text-error" id="modal-discount">- R$ 38,98</span>
+</div>
+<div class="flex justify-between text-on-surface font-price-display-sm text-price-display-sm pt-space-xs border-t border-surface-container-high mt-space-2xs">
+<span>Valor Total Cobrado:</span>
+<span class="text-on-surface" id="modal-total">R$ 350,82</span>
+</div>
+</div>
+<!-- Bloco 3: Endereço & Dados de Entrega (JSONB) -->
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Dados do Cliente & Endereço (JSONB)</h4>
+<span class="font-code-tabular text-[11px] text-on-surface-variant">campo: pedidos.endereco_entrega</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container font-body-sm text-body-sm flex flex-col gap-space-2xs">
+<div class="flex items-center gap-space-xs text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">person</span>
+<span id="modal-client-name">Marcos Silveira Rocha</span>
+<span class="text-on-surface-variant font-normal">|</span>
+<span class="text-on-surface-variant font-normal" id="modal-client-email">marcos.silveira@email.com</span>
+</div>
+<div class="flex items-start gap-space-xs text-on-surface mt-space-xs">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant mt-0.5">location_on</span>
+<div>
+<p class="font-medium" id="modal-client-address">Rua das Palmeiras, 450, Apto 802</p>
+<p class="text-on-surface-variant" id="modal-client-city">Bairro Centro • Curitiba - PR • CEP 80020-000</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rodapé do Modal -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ID no Postgres: uuid_v4 gerado em tempo real</span>
+<button class="px-space-lg py-space-xs rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-neutral-800 transition-colors" onclick="closeOrderModal()" type="button">
+          Fechar
+        </button>
+</div>
+</div>
+</div>
+<!-- Script Interativo para Abas e Modal -->
+<script>
+    function switchTab(tab) {
+      const pedidosBtn = document.getElementById('tab-pedidos-btn');
+      const clientesBtn = document.getElementById('tab-clientes-btn');
+      const pedidosSection = document.getElementById('section-pedidos');
+      const clientesSection = document.getElementById('section-clientes');
+
+      if (tab === 'pedidos') {
+        pedidosBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        pedidosBtn.classList.remove('text-on-surface-variant');
+        clientesBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        clientesBtn.classList.add('text-on-surface-variant');
+
+        pedidosSection.classList.remove('hidden');
+        clientesSection.classList.add('hidden');
+      } else {
+        clientesBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        clientesBtn.classList.remove('text-on-surface-variant');
+        pedidosBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+        pedidosBtn.classList.add('text-on-surface-variant');
+
+        clientesSection.classList.remove('hidden');
+        pedidosSection.classList.add('hidden');
+      }
+    }
+
+    function openOrderModal(id, client, email, coupon, subtotal, discount, total, status, address, neighborhood, city, uf, cep) {
+      document.getElementById('modal-order-id').innerText = '#' + id;
+      
+      const statusEl = document.getElementById('modal-order-status');
+      statusEl.innerText = status;
+      if (status === 'pago') {
+        statusEl.className = 'px-space-xs py-space-2xs rounded-full font-label-sm text-label-sm font-semibold uppercase bg-emerald-50 text-emerald-800';
+      } else {
+        statusEl.className = 'px-space-xs py-space-2xs rounded-full font-label-sm text-label-sm font-semibold uppercase bg-error-container text-on-error-container';
+      }
+
+      document.getElementById('modal-subtotal').innerText = subtotal;
+      document.getElementById('modal-coupon').innerText = coupon;
+      document.getElementById('modal-discount').innerText = discount;
+      document.getElementById('modal-total').innerText = total;
+
+      document.getElementById('modal-client-name').innerText = client;
+      document.getElementById('modal-client-email').innerText = email;
+      document.getElementById('modal-client-address').innerText = address;
+      document.getElementById('modal-client-city').innerText = neighborhood + ' • ' + city + ' - ' + uf + ' • CEP ' + cep;
+
+      document.getElementById('order-modal-backdrop').classList.remove('hidden');
+    }
+
+    function closeOrderModal() {
+      document.getElementById('order-modal-backdrop').classList.add('hidden');
+    }
+
+    // Fechar ao clicar fora do conteúdo
+    document.getElementById('order-modal-backdrop').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeOrderModal();
+      }
+    });
+  </script>
+</div></main></div></body></html>

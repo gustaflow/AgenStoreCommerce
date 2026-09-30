@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>AgenStore - Plataforma E-commerce</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#45474b", "on-tertiary-fixed": "#3d0600", "on-tertiary-container": "#e94e2b", "on-tertiary-fixed-variant": "#8b1a00", "on-secondary": "#ffffff", "on-primary": "#ffffff", "inverse-surface": "#2e3132", "surface-variant": "#e1e2e4", "on-surface": "#191c1e", "on-secondary-fixed": "#2a1700", "surface-container-low": "#f3f4f6", "surface-container-highest": "#e1e2e4", "tertiary-fixed-dim": "#ffb4a3", "secondary-fixed": "#ffddb7", "background": "#f8f9fb", "secondary-fixed-dim": "#fbba67", "on-tertiary": "#ffffff", "on-primary-fixed": "#161c24", "on-error-container": "#93000a", "primary": "#000000", "primary-fixed": "#dde3ee", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#653e00", "on-background": "#191c1e", "secondary-container": "#febd69", "on-primary-container": "#7e848e", "on-primary-fixed-variant": "#414750", "primary-container": "#161c24", "tertiary": "#000000", "surface-tint": "#595f68", "secondary": "#845403", "error": "#ba1a1a", "surface-container-high": "#e7e8ea", "on-error": "#ffffff", "surface-bright": "#f8f9fb", "tertiary-container": "#3d0600", "inverse-on-surface": "#f0f1f3", "surface-container-lowest": "#ffffff", "on-secondary-container": "#774b00", "surface-container": "#edeef0", "surface": "#f8f9fb", "primary-fixed-dim": "#c1c7d2", "inverse-primary": "#c1c7d2", "outline": "#75777c", "surface-dim": "#d9dadc", "outline-variant": "#c5c6cb", "tertiary-fixed": "#ffdad2" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-base": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "space-2xl": "3rem", "space-md": "0.75rem", "space-2xs": "0.125rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.25rem" }, "fontFamily": { "body-sm": ["Inter"], "price-display-sm": ["Inter"], "body-lg": ["Inter"], "price-display": ["Inter"], "code-tabular": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "label-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "price-display-sm": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "price-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "code-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "0", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 right-0 z-50 shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="h-16 bg-primary-container text-on-primary px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm"><img alt="AgenStore Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYW7_7TXF9ZKGZoHQ_aHhrK958wiNqS6kCGHzEkFrICLPb5CydaEoYa83zLuKXX-uiLN8v28wjcKysHxE8fhYzVwJxwZzlFJRVhM11f89U1gljGirDkmyt5ES6sfZrnWpIwawGz7nXHsoOecW3ce1BQgXDxppikIImqOpg8c7G0rlwKjwtttmY78sEVhu5RIALDiYoAfP1Kresy6XCaar50uTk7wLMw4lnshDpGX7xcizZZBlUApjW1sg"/><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-primary">AgenStore</span></div><div class="hidden xl:flex items-center gap-space-xs text-on-primary-container hover:text-on-primary cursor-pointer transition-colors pl-space-sm"><span class="material-symbols-outlined text-[20px]">location_on</span><div class="flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-primary-container leading-none">Enviar para</span><span class="font-label-md text-label-md text-on-primary font-medium leading-none">São Paulo, CEP 01001-000</span></div></div></div><div class="flex-1 max-w-3xl mx-space-md"><div class="flex items-center h-10 w-full rounded-lg overflow-hidden bg-surface-container-lowest shadow-[0_1px_2px_rgba(0,0,0,0.05)]"><button class="h-full bg-surface-container-high px-space-md font-label-md text-label-md text-on-surface-variant flex items-center gap-space-2xs border-r border-outline-variant hover:bg-surface-variant transition-colors" type="button"><span>Todos</span><span class="material-symbols-outlined text-[16px]">arrow_drop_down</span></button><input class="w-full h-full px-space-md font-body-md text-body-md text-on-surface bg-transparent focus:outline-none placeholder:text-on-surface-variant" placeholder="Pesquisar na AgenStore, produtos, marcas..." type="text"/><button class="h-full px-space-lg bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim transition-colors flex items-center justify-center font-label-md" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button></div></div><div class="flex items-center gap-space-lg shrink-0"><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-secondary-container font-semibold"><a class="font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="ofertas-do-dia" href="#">Ofertas do Dia</a><a class="font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="categorias" href="#">Categorias</a></nav><div class="flex items-center gap-space-md pl-space-sm"><div class="flex items-center gap-space-xs cursor-pointer text-left"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZaYnjtVb8FKUh9tl5-ywY-mQ-F07fKWV0weZee1VjExvoZqvP-kAGVSn4qbjyCCkUZuf4iQ0Lb6sTbCwd55QajE3HGjJiOwOPGuFn-rRM_qIW2kJBHHiedTxGhX4Km72L6RMk5-c6lVCH7rKSYAUqkHVJM9xHDTD7DbTUdM3hWWE40rfguvNK1IjYNBlArf0QM6S26H0sPJf_bKjdBlchfTa1BQPKUpYIEHfgV3RYyOUwvTOTf1hr"/><div class="hidden md:flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container leading-none">Olá, Cliente</span><span class="font-label-md text-label-md text-on-primary font-medium leading-none">Minha Conta</span></div></div><a class="relative flex items-center gap-space-2xs text-on-primary hover:text-secondary-container transition-colors py-space-xs px-space-sm" data-path="carrinho" href="#"><span class="material-symbols-outlined text-[26px]">shopping_cart</span><span class="absolute -top-1 right-1 bg-on-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold leading-none">3</span><span class="hidden md:inline font-label-md text-label-md font-bold text-on-primary mt-1">Carrinho</span></a></div></div></div><div class="h-10 bg-inverse-surface text-inverse-on-surface px-margin-desktop flex items-center justify-between shadow-inner"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-2xs cursor-pointer font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container transition-colors font-medium mr-space-sm"><span class="material-symbols-outlined text-[18px]">menu</span><span>Todos</span></div><nav class="flex items-center gap-space-lg overflow-x-auto py-space-2xs" data-active-classes="text-secondary-container font-semibold"><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="eletronicos" href="#">Eletrônicos</a><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="casa-e-cozinha" href="#">Casa</a><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="esportes" href="#">Esportes</a><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="cupons-e-promocoes" href="#">Cupons & Promoções</a><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="mais-vendidos" href="#">Mais Vendidos</a></nav></div><div class="flex items-center shrink-0"><a class="flex items-center gap-space-2xs px-space-md py-1 rounded bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim transition-colors font-label-md text-label-md font-semibold" data-path="admin-dashboard" href="#"><span class="material-symbols-outlined text-[16px]">storefront</span><span>Alternar para Painel Admin (Loja)</span></a></div></div></header><main class="w-full pt-[104px] pb-space-2xl bg-background flex-1 max-w-[1440px] mx-auto px-margin-desktop"><div class="flex flex-col w-full">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-lg">
+<div class="flex items-center gap-space-sm">
+<a class="flex items-center gap-space-2xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Continuar Comprando</span>
+</a>
+<span class="text-outline-variant">•</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Carrinho & Checkout Rápido</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-surface-container shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-[#10b981]">security</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Supabase Auth & RLS Ativo</span>
+<span class="text-outline-variant font-code-tabular text-body-sm">| Sessão Anônima Pronta para Migração</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[24px] text-secondary">shopping_bag</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Seus Itens Selecionados</span>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 bg-surface-container-high rounded text-on-surface-variant font-bold ml-space-2xs">2 itens</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sincronizado via localStorage / Supabase Realtime</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md transition-all hover:bg-surface-container">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-20 h-20 rounded-lg overflow-hidden bg-surface-container-lowest shrink-0 shadow-sm flex items-center justify-center p-space-xs">
+<img class="w-full h-full object-contain" data-alt="High-end matte black wireless bluetooth headphones placed neatly in studio soft lighting on pure white background, minimal premium commercial packshot style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArXGL5wJG6duMruS6BFwRv2eu9R2lZ9u64ERjsCKpMTFsDCYH-XsH9hl3y4fdrnQ_gUSdv2TA4OWsagaBONcw-4F5miojWtVOgqF_qzQD7Lp3lZPF5zUkvRdtAFRqiZAYvNC_fhYs-W3lx9TZ49zrlKpPpf_I4NfhbkbggStRAbIGqj86-IRA6DNlsj17NoGdDnEKtrDdJYfXyr4vfRCkunoCn7VWZVhB7-WlCXcXi2aimhcXXN8pD"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Fone Bluetooth AgenSound Pro ANC</span>
+<span class="bg-[#cc0c39] text-on-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold">-20% APLICADO</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Cor: Preto Grafite • Garantia Expressa 12 Meses</span>
+<div class="flex items-center gap-space-sm mt-space-xs">
+<span class="font-code-tabular text-code-tabular text-[#007185] font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span> Envio Full Grátis
+                  </span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-[#065f46] font-medium">Em estoque (14 un)</span>
+</div>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between w-full sm:w-auto gap-space-xs shrink-0">
+<div class="text-right">
+<span class="font-price-display-sm text-price-display-sm text-on-surface">R$ 129,90</span>
+<span class="block font-body-sm text-body-sm text-outline line-through">R$ 162,37</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center bg-surface-container-lowest rounded shadow-sm px-space-2xs py-1">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface hover:bg-surface-container rounded transition-colors" title="Diminuir quantidade" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-code-tabular text-code-tabular font-bold px-space-xs text-on-surface">1</span>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface hover:bg-surface-container rounded transition-colors" title="Aumentar quantidade" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container rounded transition-colors" title="Remover item" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary hover:bg-surface-container rounded transition-colors" title="Salvar para mais tarde" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md transition-all hover:bg-surface-container">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative w-20 h-20 rounded-lg overflow-hidden bg-surface-container-lowest shrink-0 shadow-sm flex items-center justify-center p-space-xs">
+<img class="w-full h-full object-contain" data-alt="Official size thermo-bonded match soccer football with bold dynamic geometric navy and gold panels isolated on crisp studio white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCAbb66MWtojKcgUl1clYmDpjmHA3pEudMTwMzCAA7EijmQwss6-uG0znxmZrqgYO7Ix8d440nEmKwMknDThr8DRzAn1a8qufLsxlC6TAeJWzAjqL94g0tWwvWb0-KZQ982YbadHCoIHtJ1F-GDPZVx5bG2xGtEt6LXvpTgz7f2mWapwSelDi-UheoH6nHpAEFLDyACRk6QvORgs_TSCmkSS5P-4E7ioajLOUJhx0eJQNhTh6hv2eq"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface truncate">Bola de Futebol Oficial Match Ball AgenLeague</span>
+<span class="bg-[#b12704] text-on-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold">-15% CATEGORIA ESPORTE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Tamanho: Nº 5 Campo • Costura Termofusionada</span>
+<div class="flex items-center gap-space-sm mt-space-xs">
+<span class="font-code-tabular text-code-tabular text-[#007185] font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span> Envio Full Grátis
+                  </span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-[#065f46] font-medium">Em estoque (8 un)</span>
+</div>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between w-full sm:w-auto gap-space-xs shrink-0">
+<div class="text-right">
+<span class="font-price-display-sm text-price-display-sm text-on-surface">R$ 89,90</span>
+<span class="block font-body-sm text-body-sm text-outline line-through">R$ 105,76</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center bg-surface-container-lowest rounded shadow-sm px-space-2xs py-1">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface hover:bg-surface-container rounded transition-colors" title="Diminuir quantidade" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="font-code-tabular text-code-tabular font-bold px-space-xs text-on-surface">1</span>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface hover:bg-surface-container rounded transition-colors" title="Aumentar quantidade" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container rounded transition-colors" title="Remover item" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary hover:bg-surface-container rounded transition-colors" title="Salvar para mais tarde" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-2xs text-[#065f46]">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Todos os itens possuem frete protegido e rastreamento ponto a ponto.</span>
+</div>
+<span class="font-semibold text-on-surface">Subtotal dos Itens: R$ 219,80</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-start justify-between flex-wrap gap-space-sm bg-gradient-to-r from-surface-container to-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[22px]">person_add</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface block">Primeira compra na AgenStore?</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Seu cadastro é criado instantaneamente aqui, sem redirecionamentos chatos.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-2xs bg-surface-container-lowest px-space-sm py-1 rounded text-on-surface font-label-sm text-label-sm font-semibold shadow-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-[#10b981]"></span>
+<span>Supabase Auth & Row Level Security</span>
+</div>
+</div>
+<form class="flex flex-col gap-space-lg" id="checkout-form" onsubmit="event.preventDefault();">
+<div>
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wide">1. Dados Pessoais & Acesso Rápido</span>
+<span class="font-code-tabular text-body-sm text-on-surface-variant">(Tabela perfis & auth.users)</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="cliente-nome">Nome Completo *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="cliente-nome" placeholder="Seu nome completo" required="" type="text" value="Gabriel Santos de Oliveira"/>
+<span class="material-symbols-outlined text-[18px] text-outline absolute right-3 top-3 pointer-events-none">badge</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="cliente-email">E-mail para Acesso & Notas *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="cliente-email" placeholder="seu.email@exemplo.com" required="" type="email" value="gabriel.santos@email.com"/>
+<span class="material-symbols-outlined text-[18px] text-outline absolute right-3 top-3 pointer-events-none">mail</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="cliente-senha">Crie uma Senha Rápida *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="cliente-senha" placeholder="Mínimo 6 caracteres" required="" type="password" value="••••••••••••"/>
+<span class="material-symbols-outlined text-[18px] text-outline absolute right-3 top-3 pointer-events-none">lock</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="cliente-telefone">Telefone / WhatsApp (Atualizações) *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="cliente-telefone" placeholder="(DDD) 90000-0000" required="" type="tel" value="(11) 98452-1920"/>
+<span class="material-symbols-outlined text-[18px] text-outline absolute right-3 top-3 pointer-events-none">call</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wide">2. Endereço de Entrega</span>
+<span class="font-code-tabular text-body-sm text-on-surface-variant">(JSONB clientes.endereco)</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#007185] flex items-center gap-0.5 cursor-pointer hover:underline">
+<span class="material-symbols-outlined text-[16px]">my_location</span> Usar Localização Atual
+              </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-6 gap-space-md">
+<div class="sm:col-span-2 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="end-cep">CEP *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="end-cep" placeholder="00000-000" type="text" value="01310-200"/>
+<button class="absolute right-2 top-2 px-space-xs py-1 bg-surface-container text-on-surface-variant hover:text-on-surface text-label-sm font-label-sm rounded" title="Buscar CEP" type="button">Buscar</button>
+</div>
+</div>
+<div class="sm:col-span-4 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="end-rua">Logradouro / Rua / Avenida *</label>
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="end-rua" placeholder="Ex: Av. Paulista" required="" type="text" value="Avenida Paulista"/>
+</div>
+<div class="sm:col-span-2 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="end-num">Número *</label>
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="end-num" placeholder="123" required="" type="text" value="1578"/>
+</div>
+<div class="sm:col-span-4 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="end-comp">Complemento / Referência</label>
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="end-comp" placeholder="Apto, Bloco, etc." type="text" value="Apto 104 - Bloco B"/>
+</div>
+<div class="sm:col-span-2 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="end-bairro">Bairro *</label>
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="end-bairro" placeholder="Bairro" required="" type="text" value="Bela Vista"/>
+</div>
+<div class="sm:col-span-3 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="end-cidade">Cidade *</label>
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="end-cidade" placeholder="Cidade" required="" type="text" value="São Paulo"/>
+</div>
+<div class="sm:col-span-1 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface" for="end-uf">UF *</label>
+<input class="w-full bg-surface-container-lowest px-space-md py-2.5 rounded-lg text-body-md font-body-md text-on-surface shadow-sm text-center uppercase focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="end-uf" maxlength="2" placeholder="SP" required="" type="text" value="SP"/>
+</div>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0">bolt</span>
+<span>Sem burocracia: sua conta é criada automaticamente pelo Supabase Auth com Row Level Security ativo. Você já finaliza o pedido logado e pronto para acompanhar pelo app ou e-mail.</span>
+</div>
+</form>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-[80px]">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Resumo do Pedido</span>
+<div class="flex flex-col gap-space-xs font-body-md text-body-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Subtotal (2 itens)</span>
+<span class="font-code-tabular font-medium text-on-surface">R$ 219,80</span>
+</div>
+<div class="flex items-center justify-between text-[#065f46]">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_offer</span>
+<span>Cupom BEMVINDO10 (-10%)</span>
+</span>
+<span class="font-code-tabular font-bold">- R$ 21,98</span>
+</div>
+<div class="flex items-center justify-between text-[#065f46]">
+<span>Descontos de Promoção</span>
+<span class="font-code-tabular font-semibold">Incluso (-R$ 48,23)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span>Frete AgenStore Full</span>
+<span class="font-label-sm text-label-sm px-1 py-0.5 bg-[#ecfdf5] text-[#065f46] rounded font-bold">GRÁTIS</span>
+</span>
+<span class="font-code-tabular font-semibold text-[#065f46]">R$ 0,00</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<label class="block font-label-sm text-label-sm font-semibold text-on-surface-variant mb-1" for="cupom-input">Cupom de Desconto</label>
+<div class="flex items-center gap-space-xs">
+<div class="relative flex-1">
+<input class="w-full bg-surface-container-low px-space-md py-2 rounded-lg font-code-tabular text-body-md text-[#065f46] font-bold uppercase focus:outline-none focus:ring-2 focus:ring-[#f08804]" id="cupom-input" placeholder="Inserir cupom..." type="text" value="BEMVINDO10"/>
+<span class="material-symbols-outlined text-[18px] text-[#065f46] absolute right-2.5 top-2.5">check_circle</span>
+</div>
+<button class="px-space-md py-2 bg-surface-container text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-variant transition-colors shrink-0 font-semibold" type="button">
+              Aplicado
+            </button>
+</div>
+<span class="font-body-sm text-body-sm text-[#065f46] mt-1 block">Validado no Supabase: Cupom exclusivo para primeira compra.</span>
+</div>
+<div class="pt-space-sm">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wide block mb-space-xs">Escolha a Forma de Pagamento</span>
+<div class="grid grid-cols-2 gap-space-xs">
+<label class="flex flex-col p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">PIX</span>
+<input checked="" class="accent-[#f08804]" name="forma_pagamento" type="radio" value="pix"/>
+</div>
+<span class="font-body-sm text-body-sm text-[#065f46] font-semibold mt-1">Aprovação imediata</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Chave QR Code Dinâmica</span>
+</label>
+<label class="flex flex-col p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Cartão</span>
+<input class="accent-[#f08804]" name="forma_pagamento" type="radio" value="cartao"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Até 6x sem juros</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Visa, Master, Elo</span>
+</label>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Total do Pedido</span>
+<span class="font-body-sm text-body-sm text-[#065f46]">Economia total de R$ 70,21</span>
+</div>
+<div class="text-right">
+<span class="font-price-display text-price-display text-[#b12704] font-extrabold leading-none">R$ 197,82</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">ou R$ 197,82 via Pix</span>
+</div>
+</div>
+<button class="w-full py-3.5 px-space-lg rounded-lg bg-[#febd69] hover:bg-[#f08804] text-[#111827] font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-xs transition-all transform active:scale-[0.99] shadow-sm" id="btn-finalizar-pedido" type="button">
+<span class="material-symbols-outlined text-[22px]">flash_on</span>
+<span>Finalizar Pedido com 1-Clique</span>
+</button>
+<div class="flex items-start gap-space-2xs p-space-sm rounded bg-[#eff6ff] text-[#1e40af] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">database</span>
+<span>
+<strong>Trigger de Automação:</strong> Ao finalizar, o estoque é atualizado em tempo real e o pedido registrado na tabela <code class="font-code-tabular font-bold">pedidos</code> com status <span class="bg-[#ecfdf5] text-[#065f46] px-1 py-0.5 rounded font-bold">Pago</span>.
+          </span>
+</div>
+<div class="flex items-center justify-center gap-space-md text-on-surface-variant pt-space-2xs">
+<div class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-[#10b981]">lock</span>
+<span>SSL 256-bit</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>Compra Garantida</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface">sync</span>
+<span>Devolução 7 dias</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[28px]">electric_bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Entrega Turbo AgenStore</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Previsão: <strong>Amanhã até as 18:00</strong> para pedidos finalizados hoje.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden" id="modal-sucesso">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl max-w-lg w-full mx-space-md shadow-2xl flex flex-col gap-space-md transform transition-all">
+<div class="w-14 h-14 rounded-full bg-[#ecfdf5] text-[#065f46] flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<div class="text-center flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">Pedido Confirmado!</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Código do Pedido: <strong class="font-code-tabular text-on-surface">#AGN-849204-BR</strong></span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Status do Pedido:</span>
+<span class="font-bold text-[#065f46] bg-[#ecfdf5] px-2 py-0.5 rounded">Pago</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Cliente Supabase:</span>
+<span class="font-semibold text-on-surface">Gabriel Santos de Oliveira</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">E-mail Auth:</span>
+<span class="font-code-tabular text-on-surface">gabriel.santos@email.com</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Valor Total:</span>
+<span class="font-bold text-on-surface">R$ 197,82 (Pix Aprovado)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-center text-on-surface-variant">
+        As credenciais de acesso foram emitidas via Supabase Auth e o comprovante de envio enviado para o seu WhatsApp.
+      </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="w-full py-2.5 rounded-lg bg-surface-container hover:bg-surface-variant font-label-md text-label-md text-on-surface font-semibold transition-colors" id="btn-fechar-modal" type="button">
+          Ver Meu Histórico
+        </button>
+<button class="w-full py-2.5 rounded-lg bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container font-label-md text-label-md font-bold transition-colors" id="btn-rastrear" type="button">
+          Rastrear Pacote
+        </button>
+</div>
+</div>
+</div>
+<script>
+    (function() {
+      const btnFinalizar = document.getElementById('btn-finalizar-pedido');
+      const modalSucesso = document.getElementById('modal-sucesso');
+      const btnFecharModal = document.getElementById('btn-fechar-modal');
+      const btnRastrear = document.getElementById('btn-rastrear');
+
+      if (btnFinalizar && modalSucesso) {
+        btnFinalizar.addEventListener('click', function() {
+          const originalText = btnFinalizar.innerHTML;
+          btnFinalizar.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">refresh</span> <span>Processando no Supabase...</span>';
+          btnFinalizar.disabled = true;
+
+          setTimeout(() => {
+            btnFinalizar.innerHTML = originalText;
+            btnFinalizar.disabled = false;
+            modalSucesso.classList.remove('hidden');
+          }, 900);
+        });
+      }
+
+      if (btnFecharModal && modalSucesso) {
+        btnFecharModal.addEventListener('click', function() {
+          modalSucesso.classList.add('hidden');
+        });
+      }
+
+      if (btnRastrear && modalSucesso) {
+        btnRastrear.addEventListener('click', function() {
+          modalSucesso.classList.add('hidden');
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container text-on-surface shadow-[0_-1px_6px_rgba(0,0,0,0.03)]"><div class="max-w-[1440px] mx-auto px-margin-desktop pt-space-2xl pb-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl pb-space-xl border-b border-surface-container-high"><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Conheça a AgenStore</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Sobre Nós</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Carreiras & Vagas</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Sustentabilidade</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Assessoria de Imprensa</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Ganhe Dinheiro Conosco</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Venda na AgenStore</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Programa de Afiliados</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Anuncie Seus Produtos</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Logística & Envios Full</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Pagamento & Segurança</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Cartões AgenStore</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Pix Instantâneo & Boleto</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Proteção ao Consumidor</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Central de Privacidade</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Status da Infraestrutura</span><div class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-lowest shadow-sm"><span class="inline-block w-2.5 h-2.5 rounded-full bg-[#10b981] animate-pulse"></span><span class="font-label-md text-label-md text-on-surface font-semibold">Conectado ao Supabase</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Sincronização em tempo real de inventário, autenticação segura e gateway de checkout integrados.</p><div class="flex items-center gap-space-md text-on-surface-variant pt-space-xs"><span class="material-symbols-outlined text-[20px]" title="Certificado SSL 256-bit">lock</span><span class="material-symbols-outlined text-[20px]" title="Conformidade LGPD">verified_user</span><span class="material-symbols-outlined text-[20px]" title="Pagamento Protegido">shield</span></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant"><div class="flex items-center gap-space-md font-body-sm text-body-sm"><a class="hover:text-on-surface transition-colors" href="#">Condições de Uso</a><a class="hover:text-on-surface transition-colors" href="#">Notificação de Privacidade</a><a class="hover:text-on-surface transition-colors" href="#">Cookies</a><a class="hover:text-on-surface transition-colors" href="#">Acessibilidade</a></div><span class="font-body-sm text-body-sm">© 2024 AgenStore Comércio Eletrônico Ltda. CNPJ 00.000.000/0001-00. Todos os direitos reservados.</span></div></div></footer></body></html>

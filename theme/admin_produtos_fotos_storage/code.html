@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>AgenStore - Painel de Controle Lojista</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#45474b", "on-tertiary-fixed": "#3d0600", "on-tertiary-container": "#e94e2b", "on-tertiary-fixed-variant": "#8b1a00", "on-secondary": "#ffffff", "on-primary": "#ffffff", "inverse-surface": "#2e3132", "surface-variant": "#e1e2e4", "on-surface": "#191c1e", "on-secondary-fixed": "#2a1700", "surface-container-low": "#f3f4f6", "surface-container-highest": "#e1e2e4", "tertiary-fixed-dim": "#ffb4a3", "secondary-fixed": "#ffddb7", "background": "#f8f9fb", "secondary-fixed-dim": "#fbba67", "on-tertiary": "#ffffff", "on-primary-fixed": "#161c24", "on-error-container": "#93000a", "primary": "#000000", "primary-fixed": "#dde3ee", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#653e00", "on-background": "#191c1e", "secondary-container": "#febd69", "on-primary-container": "#7e848e", "on-primary-fixed-variant": "#414750", "primary-container": "#161c24", "tertiary": "#000000", "surface-tint": "#595f68", "secondary": "#845403", "error": "#ba1a1a", "surface-container-high": "#e7e8ea", "on-error": "#ffffff", "surface-bright": "#f8f9fb", "tertiary-container": "#3d0600", "inverse-on-surface": "#f0f1f3", "surface-container-lowest": "#ffffff", "on-secondary-container": "#774b00", "surface-container": "#edeef0", "surface": "#f8f9fb", "primary-fixed-dim": "#c1c7d2", "inverse-primary": "#c1c7d2", "outline": "#75777c", "surface-dim": "#d9dadc", "outline-variant": "#c5c6cb", "tertiary-fixed": "#ffdad2" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-base": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "space-2xl": "3rem", "space-md": "0.75rem", "space-2xs": "0.125rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.25rem" }, "fontFamily": { "body-sm": ["Inter"], "price-display-sm": ["Inter"], "body-lg": ["Inter"], "price-display": ["Inter"], "code-tabular": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "label-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "price-display-sm": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "price-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "code-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "0", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-space-lg pb-space-lg shadow-[1px_0_4px_rgba(0,0,0,0.04)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><img alt="AgenStore Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYW7_7TXF9ZKGZoHQ_aHhrK958wiNqS6kCGHzEkFrICLPb5CydaEoYa83zLuKXX-uiLN8v28wjcKysHxE8fhYzVwJxwZzlFJRVhM11f89U1gljGirDkmyt5ES6sfZrnWpIwawGz7nXHsoOecW3ce1BQgXDxppikIImqOpg8c7G0rlwKjwtttmY78sEVhu5RIALDiYoAfP1Kresy6XCaar50uTk7wLMw4lnshDpGX7xcizZZBlUApjW1sg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">AgenStore</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Lojista Pro</span></div></div><div class="px-space-md mb-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-lowest text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-[#10b981]"></span><span class="font-label-sm text-label-sm font-medium">Supabase Live DB</span></div></div><nav class="flex-1 px-space-sm flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Visão Geral</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-pedidos" href="#"><span class="material-symbols-outlined text-[20px]">orders</span><span class="font-label-md text-label-md">Pedidos & Vendas</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-semibold" data-path="admin-produtos" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-md text-label-md">Catálogo & Estoque</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-financeiro" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Financeiro & Repasses</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-configuracoes" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-md text-label-md">Configurações Loja</span></a></nav><div class="px-space-md pt-space-md border-t border-surface-container-high"><a class="flex items-center justify-center gap-space-xs w-full py-space-sm rounded bg-surface-container-highest text-on-surface hover:bg-surface-variant transition-colors font-label-md text-label-md font-semibold" data-path="home" href="#"><span class="material-symbols-outlined text-[18px]">storefront</span><span>Voltar para a Loja</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest z-40 flex items-center justify-between px-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="material-symbols-outlined text-[20px]">corporate_fare</span><span class="font-label-md text-label-md font-semibold text-on-surface">Operações da Loja Principal</span></div><div class="flex items-center gap-space-lg"><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-on-surface font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-relatorios" href="#">Relatórios de Vendas</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-promocoes" href="#">Campanhas Ativas</a></nav><div class="flex items-center gap-space-md pl-space-sm border-l border-surface-container-high"><button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded-full hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZaYnjtVb8FKUh9tl5-ywY-mQ-F07fKWV0weZee1VjExvoZqvP-kAGVSn4qbjyCCkUZuf4iQ0Lb6sTbCwd55QajE3HGjJiOwOPGuFn-rRM_qIW2kJBHHiedTxGhX4Km72L6RMk5-c6lVCH7rKSYAUqkHVJM9xHDTD7DbTUdM3hWWE40rfguvNK1IjYNBlArf0QM6S26H0sPJf_bKjdBlchfTa1BQPKUpYIEHfgV3RYyOUwvTOTf1hr"/><div class="flex flex-col text-left"><span class="font-label-md text-label-md font-bold text-on-surface leading-none">Administrador</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">admin@agenstore.com</span></div></div></div></div></header><main class="w-full pt-16 min-h-screen bg-background px-space-xl py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Stat Cards (No borders, pure surface shift and soft shadows) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-lg mb-space-xl">
+<!-- Card 1: Total Produtos -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-surface-container rounded-full opacity-60 group-hover:scale-110 transition-transform"></div>
+<div class="flex items-center justify-between mb-space-sm z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Produtos Ativos</span>
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</span>
+</div>
+<div class="z-10 flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">4</span>
+<span class="font-label-sm text-label-sm text-[#059669] font-medium bg-[#ecfdf5] px-2 py-0.5 rounded-full">100% ativos</span>
+</div>
+<div class="mt-space-sm z-10 flex items-center gap-space-2xs text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+<span class="font-body-sm text-body-sm">Sincronizado via Supabase RLS</span>
+</div>
+</div>
+<!-- Card 2: Baixo Estoque -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-error-container/30 rounded-full opacity-60 group-hover:scale-110 transition-transform"></div>
+<div class="flex items-center justify-between mb-space-sm z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Alerta de Estoque</span>
+<span class="w-8 h-8 rounded-lg bg-error-container/60 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</span>
+</div>
+<div class="z-10 flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">1</span>
+<span class="font-label-sm text-label-sm text-error font-medium bg-error-container px-2 py-0.5 rounded-full">Gargalo</span>
+</div>
+<div class="mt-space-sm z-10 flex items-center gap-space-2xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-error">arrow_downward</span>
+<span class="font-body-sm text-body-sm">Jogo de Panelas (≤ 30 unid.)</span>
+</div>
+</div>
+<!-- Card 3: Valor de Inventário -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-secondary-container/20 rounded-full opacity-60 group-hover:scale-110 transition-transform"></div>
+<div class="flex items-center justify-between mb-space-sm z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Valor em Estoque</span>
+<span class="w-8 h-8 rounded-lg bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</span>
+</div>
+<div class="z-10 flex items-baseline gap-space-2xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">R$ 28.374</span>
+<span class="font-label-md text-label-md text-on-surface-variant">,00</span>
+</div>
+<div class="mt-space-sm z-10 flex items-center gap-space-xs text-on-surface-variant">
+<span class="font-code-tabular text-code-tabular font-medium text-on-surface">280 unidades</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm">Custo médio R$ 101,33</span>
+</div>
+</div>
+<!-- Card 4: Supabase Storage Bucket -->
+<div class="bg-primary-container text-on-primary p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-white/5 rounded-full group-hover:scale-110 transition-transform"></div>
+<div class="flex items-center justify-between mb-space-sm z-10">
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider">Bucket Storage</span>
+<span class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+</span>
+</div>
+<div class="z-10 flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-primary font-bold tracking-tight">4</span>
+<span class="font-label-sm text-label-sm text-on-secondary-fixed bg-secondary-container font-semibold px-2 py-0.5 rounded-full">fotos-produtos</span>
+</div>
+<div class="mt-space-sm z-10 flex items-center justify-between text-on-primary-container font-code-tabular text-code-tabular">
+<span class="truncate">public/fotos-produtos/*</span>
+<span class="text-on-primary flex items-center text-[12px]"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981] mr-1.5"></span>Ativo</span>
+</div>
+</div>
+</div>
+<!-- Header & Action Bar -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-lg flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Left: Search & Select Filter Filters -->
+<div class="flex flex-wrap items-center gap-space-sm flex-1">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-inner transition-colors" id="productSearchInput" placeholder="Buscar produto por nome, ID ou tag..." type="text"/>
+</div>
+<!-- Category Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md py-2 pl-3 pr-8 rounded-lg focus:outline-none cursor-pointer" id="categoryFilter">
+<option value="all">Todas Categorias</option>
+<option value="Eletrônicos">Eletrônicos (2)</option>
+<option value="Casa">Casa (1)</option>
+<option value="Esporte">Esporte (1)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md py-2 pl-3 pr-8 rounded-lg focus:outline-none cursor-pointer" id="statusFilter">
+<option value="all">Todos os Status</option>
+<option value="ativo">Ativos</option>
+<option value="pausado">Pausados</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Supabase Policy Badge -->
+<div class="hidden xl:flex items-center gap-1.5 px-3 py-1.5 bg-surface-container rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-[#059669]">verified_user</span>
+<span>RLS Policies: public.produtos</span>
+</div>
+</div>
+<!-- Right: New Product Action Button -->
+<div class="flex items-center gap-space-sm justify-end">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-colors" id="btnRefreshTable" title="Recarregar dados do Supabase" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+<button class="flex items-center justify-center gap-space-xs bg-secondary-container hover:bg-[#f08804] text-[#111827] px-space-lg py-2.5 rounded-lg font-headline-sm text-headline-sm font-semibold shadow-sm hover:shadow transition-all cursor-pointer" id="openDrawerBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Cadastrar Novo Produto</span>
+</button>
+</div>
+</div>
+<!-- Main Grid: Product Table & Insights -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Products CRUD Table (Span 12) -->
+<div class="xl:col-span-12 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Bar -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Tabela de Produtos (schema: public.produtos)</span>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded text-label-sm font-code-tabular">4 registros</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
+<span>Sincronização em tempo real ativada</span>
+</div>
+</div>
+<!-- Table Body -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest text-on-surface-variant uppercase font-label-sm text-label-sm tracking-wider">
+<th class="py-space-md px-space-lg">Foto (Bucket)</th>
+<th class="py-space-md px-space-md">Produto & Descrição</th>
+<th class="py-space-md px-space-md">Categoria</th>
+<th class="py-space-md px-space-md">Preço (R$)</th>
+<th class="py-space-md px-space-md">Estoque / Baixa Aut.</th>
+<th class="py-space-md px-space-md">Status RLS</th>
+<th class="py-space-md px-space-lg text-right">Ações Rápidas</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md" id="productTableBody">
+<!-- Row 1: Fone Bluetooth -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group" data-category="Eletrônicos" data-name="Fone de Ouvido Bluetooth TWS Pro" data-status="ativo">
+<td class="py-space-md px-space-lg align-middle">
+<div class="relative w-14 h-14 rounded-lg bg-surface-container overflow-hidden group-hover:scale-105 transition-transform flex items-center justify-center shadow-inner">
+<img alt="Fone Bluetooth" class="w-full h-full object-cover" data-alt="Modern black true wireless earbud headphones in an open sleek charging case, minimalist clean studio lighting, high contrast commercial product photography against a crisp neutral backdrop, hyperrealistic details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyMBuNJQToBQiipVLIktZZqEjK_gyoRu6mrG-IsiUcRz6fbtbxiTvPQ_iztXLcknR9TE1lTxRlpJzY0upVX4xmmgw9psCp-Gb2nUhlCbA9PmdlGYYI0mqCQ-lT3nkY86E4Skd-lEwaeqbZshPXwNWwYl0UVn0Xbg79UadqxgkzApWpFZEfHa1qlVCjoHvg9O98G_GUeZJ66gGVnA-zMW_im4fDHpStQ9_B1gm46QoYgzX1QbcLkT3r"/>
+<span class="absolute bottom-0 right-0 bg-primary/80 text-on-primary font-code-tabular text-[9px] px-1 rounded-tl">webp</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">Fone de Ouvido Bluetooth TWS Pro</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Cancelamento ativo de ruído ANC, bateria de 32h com estojo e pareamento rápido.</span>
+<span class="font-code-tabular text-[11px] text-outline mt-0.5">storage: fotos-produtos/fone-bluetooth.webp</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface font-medium">
+<span class="material-symbols-outlined text-[13px] text-on-surface-variant">headphones</span>
+                  Eletrônicos
+                </span>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="font-price-display-sm text-price-display-sm text-on-surface">R$ 129,90</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Margem 44%</span>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center">
+<span class="font-code-tabular text-code-tabular font-bold text-on-surface">50 unid.</span>
+<span class="font-label-sm text-[10px] text-[#059669] font-semibold">Saudável</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-[#10b981] rounded-full" style="width: 55%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-outline-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-[#059669]">bolt</span> Trigger Ativo
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-[#ecfdf5] text-[#065f46]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
+                  Ativo
+                </span>
+</td>
+<td class="py-space-md px-space-lg align-middle text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Gerenciar Foto no Storage" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Editar Produto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Pausar Vendas" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors" title="Excluir Registro" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Mouse Wireless -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group" data-category="Eletrônicos" data-name="Mouse Sem Fio Ergonomico 2.4Ghz" data-status="ativo">
+<td class="py-space-md px-space-lg align-middle">
+<div class="relative w-14 h-14 rounded-lg bg-surface-container overflow-hidden group-hover:scale-105 transition-transform flex items-center justify-center shadow-inner">
+<img alt="Mouse Wireless" class="w-full h-full object-cover" data-alt="Matte dark graphite ergonomic wireless computer mouse on a subtle clean light surface, crisp directional lighting, macro commercial tech gadget photograph, sharp textures and high fidelity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwG5Viu3tr5_xuy3eOSV5-M4nSI_ExSQN39Ve-9yOjxR8gHEWyzF1W-ypvKS2Z3sEug3Ko1cYpOYsEq3fLKtkuTx4fVKs-GjlQvjT86nbjxOXxAxqwEqSvU6VwQmHUtUOin2CPIeQKTM96K3HR-j526Y4CXHtktwf5Q6D0hlmb9UKBUzku_QxfGNFw0QuS2Zy1nV5Ts8mubiv4Xmno1yzm4ii51X5OGxjUTjZDw6VkuYE_KHqtdfLS"/>
+<span class="absolute bottom-0 right-0 bg-primary/80 text-on-primary font-code-tabular text-[9px] px-1 rounded-tl">webp</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">Mouse Sem Fio Ergonômico 2.4Ghz</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Sensor óptico de 1600 DPI, cliques silenciosos e dongle USB nano integrado.</span>
+<span class="font-code-tabular text-[11px] text-outline mt-0.5">storage: fotos-produtos/mouse-wireless.webp</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface font-medium">
+<span class="material-symbols-outlined text-[13px] text-on-surface-variant">mouse</span>
+                  Eletrônicos
+                </span>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="font-price-display-sm text-price-display-sm text-on-surface">R$ 59,90</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Margem 52%</span>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center">
+<span class="font-code-tabular text-code-tabular font-bold text-on-surface">120 unid.</span>
+<span class="font-label-sm text-[10px] text-[#059669] font-semibold">Excelente</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-[#10b981] rounded-full" style="width: 85%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-outline-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-[#059669]">bolt</span> Trigger Ativo
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-[#ecfdf5] text-[#065f46]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
+                  Ativo
+                </span>
+</td>
+<td class="py-space-md px-space-lg align-middle text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Gerenciar Foto no Storage" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Editar Produto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Pausar Vendas" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors" title="Excluir Registro" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Jogo de Panelas (Baixo estoque) -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group bg-error-container/10" data-category="Casa" data-name="Jogo de Panelas Antiaderente Ceramic 5 Peças" data-status="ativo">
+<td class="py-space-md px-space-lg align-middle">
+<div class="relative w-14 h-14 rounded-lg bg-surface-container overflow-hidden group-hover:scale-105 transition-transform flex items-center justify-center shadow-inner">
+<img alt="Jogo de Panelas" class="w-full h-full object-cover" data-alt="Premium nonstick ceramic cookware pot set in warm copper and stone tones, arranged in an aesthetic modern culinary setting, clean light luxury kitchen countertop background, editorial food and home magazine visual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN-KSex62501WQ5efuPvPWCsHigWz2VxEtDgjBJ5tS3Do99E_z_UQv54JT3iF4Z6PS9ScUOJgBuKVvOsDVvUso8OqTL438frstEHLWyNHf-16yQ3MgGgQrSOK6exfduMdZoxvx1bfp_bYXXj-IGEmroiO1yFAGJRxd-B534pkN7SzuYmHJcv3_zssbKfnx9Lpk1C53O8DoqseOuhdwyMqvGkPpk1CCmOyyLmYJ4p8MJpNDbS38RyPw"/>
+<span class="absolute bottom-0 right-0 bg-primary/80 text-on-primary font-code-tabular text-[9px] px-1 rounded-tl">webp</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">Jogo de Panelas Antiaderente Ceramic 5 Peças</span>
+<span class="px-1.5 py-0.5 bg-error text-on-error font-label-sm text-[10px] rounded font-bold uppercase">Repor</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Alumínio com revestimento cerâmico livre de PFOA, tampas em vidro temperado com saída de vapor.</span>
+<span class="font-code-tabular text-[11px] text-outline mt-0.5">storage: fotos-produtos/jogo-panelas.webp</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface font-medium">
+<span class="material-symbols-outlined text-[13px] text-on-surface-variant">skillet</span>
+                  Casa
+                </span>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="font-price-display-sm text-price-display-sm text-on-surface">R$ 249,90</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Margem 38%</span>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center">
+<span class="font-code-tabular text-code-tabular font-bold text-error">30 unid.</span>
+<span class="font-label-sm text-[10px] text-error font-semibold">≤ Mínimo</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 25%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-error">notification_important</span> Reabastecer
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-[#ecfdf5] text-[#065f46]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
+                  Ativo
+                </span>
+</td>
+<td class="py-space-md px-space-lg align-middle text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Gerenciar Foto no Storage" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Editar Produto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Pausar Vendas" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors" title="Excluir Registro" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Bola de Futebol -->
+<tr class="hover:bg-surface-container-low/70 transition-colors group" data-category="Esporte" data-name="Bola Oficial de Futebol de Campo Pro Match" data-status="ativo">
+<td class="py-space-md px-space-lg align-middle">
+<div class="relative w-14 h-14 rounded-lg bg-surface-container overflow-hidden group-hover:scale-105 transition-transform flex items-center justify-center shadow-inner">
+<img alt="Bola de Futebol" class="w-full h-full object-cover" data-alt="Professional tournament soccer ball with textured hexagonal geometric pattern and bright neon accents, isolated on clean minimalist white pedestal, crisp dramatic sports studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4HpibB6sPlZKeGhXPSck4DUFPiZ6Xg--gnyeenhrSwtVlNrDVLGpejeAsaH_rLbyfZ1DOkBbuVTH9w0ZGc3HfFo94S53gKVKu2r4uHYtO2V6qOiBoqo32m4BjxKmaP0F74ESBdAH4M369TMxWzOsVU7qUe4nPMDbzUW8Jl6laC9pMAOjk2kGiXIbIrxBAOeR_eRmz-aRaP9YyYzDx1oxBNjPW0k1p8Y58nRp-Se4MQdhp7IIb_9v4"/>
+<span class="absolute bottom-0 right-0 bg-primary/80 text-on-primary font-code-tabular text-[9px] px-1 rounded-tl">webp</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">Bola Oficial de Futebol de Campo Pro Match</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Construção termofusionada sem costuras, alta resistência a água e câmara de butil balanceada.</span>
+<span class="font-code-tabular text-[11px] text-outline mt-0.5">storage: fotos-produtos/bola-futebol.webp</span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface font-medium">
+<span class="material-symbols-outlined text-[13px] text-on-surface-variant">sports_soccer</span>
+                  Esporte
+                </span>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="font-price-display-sm text-price-display-sm text-on-surface">R$ 89,90</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Margem 48%</span>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<div class="flex flex-col gap-1 w-32">
+<div class="flex justify-between items-center">
+<span class="font-code-tabular text-code-tabular font-bold text-on-surface">80 unid.</span>
+<span class="font-label-sm text-[10px] text-[#059669] font-semibold">Normal</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-[#10b981] rounded-full" style="width: 70%;"></div>
+</div>
+<span class="font-body-sm text-[11px] text-outline-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-[#059669]">bolt</span> Trigger Ativo
+                  </span>
+</div>
+</td>
+<td class="py-space-md px-space-md align-middle">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-[#ecfdf5] text-[#065f46]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
+                  Ativo
+                </span>
+</td>
+<td class="py-space-md px-space-lg align-middle text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Gerenciar Foto no Storage" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Editar Produto" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors" title="Pausar Vendas" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors" title="Excluir Registro" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination and Footer Information -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm border-t border-surface-container-high/40">
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<span>Mostrando <strong>1 - 4</strong> de <strong>4</strong> produtos cadastrados</span>
+<span class="text-outline-variant">•</span>
+<span class="font-code-tabular text-code-tabular text-outline">Latency: 14ms (Supabase São Paulo sa-east-1)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline font-label-md text-label-md cursor-not-allowed" disabled="" type="button">Anterior</button>
+<span class="px-3 py-1.5 rounded bg-primary-container text-on-primary font-label-md text-label-md">1</span>
+<button class="px-3 py-1.5 rounded bg-surface-container text-outline font-label-md text-label-md cursor-not-allowed" disabled="" type="button">Próxima</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Supabase Storage Sync & Architecture Card Section -->
+<div class="mt-space-xl grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Storage Bucket Information -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">folder_special</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Supabase Storage: Bucket Público</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+          As fotos cadastradas são transferidas diretamente para o bucket <code class="bg-surface-container px-1 py-0.5 rounded font-code-tabular text-secondary text-[12px]">fotos-produtos</code> com compressão automática WebP e URLs CDN de borda.
+        </p>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between font-code-tabular text-code-tabular text-on-surface">
+<span class="text-outline">GET /object/public/fotos-produtos/</span>
+<span class="text-[#059669] font-bold">200 OK</span>
+</div>
+</div>
+<!-- Inventory Trigger Notification -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="material-symbols-outlined text-[#059669] text-[24px]">published_with_changes</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Trigger de Baixa de Estoque</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+          A cada pedido finalizado no carrinho de compras, uma function PL/pgSQL executa a baixa atômica de saldo na tabela de produtos, evitando sobre-vendas.
+        </p>
+</div>
+<div class="flex items-center gap-space-xs text-[#059669] font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Trigger trg_baixa_estoque_venda [HABILITADO]</span>
+</div>
+</div>
+<!-- Category Mapping -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="material-symbols-outlined text-on-surface text-[24px]">category</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Chave Estrangeira: Categorias</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+          Relacionamento <code class="bg-surface-container px-1 py-0.5 rounded font-code-tabular text-on-surface text-[12px]">produtos.categoria_id → categorias.id</code> garantindo integridade referencial nas listagens do e-commerce.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-1 bg-surface-container rounded font-label-sm text-label-sm font-medium">Eletrônicos</span>
+<span class="px-2 py-1 bg-surface-container rounded font-label-sm text-label-sm font-medium">Casa</span>
+<span class="px-2 py-1 bg-surface-container rounded font-label-sm text-label-sm font-medium">Esporte</span>
+</div>
+</div>
+</div>
+<!-- Slide-over Drawer / Modal: Novo Produto & Upload Storage -->
+<div class="fixed inset-0 bg-primary/60 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none flex justify-end" id="productDrawerOverlay">
+<div class="w-full max-w-xl bg-surface-container-lowest h-full shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out" id="productDrawerPanel">
+<!-- Drawer Header -->
+<div class="px-space-xl py-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/40 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">add_photo_alternate</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight">Cadastrar Novo Produto</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Salvar em public.produtos & fotos-produtos</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant flex items-center justify-center transition-colors" id="closeDrawerBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content Form -->
+<form class="flex-1 overflow-y-auto p-space-xl flex flex-col gap-space-lg" id="newProductForm">
+<!-- Supabase Storage Dropzone -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+<span>Imagem do Produto (Supabase Storage)</span>
+<span class="font-code-tabular text-[11px] text-secondary font-medium">bucket: fotos-produtos</span>
+</label>
+<div class="relative rounded-xl p-space-lg flex flex-col items-center justify-center text-center cursor-pointer transition-all bg-surface-container-low hover:bg-surface-container" id="dropzoneContainer">
+<input accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer z-20" id="imageFileInput" type="file"/>
+<div class="flex flex-col items-center" id="dropzoneEmptyState">
+<div class="w-14 h-14 rounded-full bg-secondary-container/30 text-secondary flex items-center justify-center mb-space-sm">
+<span class="material-symbols-outlined text-[30px]">cloud_upload</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Arraste a foto ou clique para upload</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xs">
+                Formatos recomendados: WebP, PNG, JPG (máx. 5MB). O arquivo será salvo diretamente via <code class="font-code-tabular text-on-surface font-semibold">supabase.storage</code>.
+              </p>
+</div>
+<!-- Preview State (Initially Hidden) -->
+<div class="hidden flex-col items-center gap-space-sm w-full" id="dropzonePreviewState">
+<div class="relative w-32 h-32 rounded-lg bg-surface-container-lowest shadow-md overflow-hidden">
+<img alt="Prévia do Produto" class="w-full h-full object-cover" id="previewImageElement" src=""/>
+<button class="absolute top-1 right-1 w-6 h-6 rounded-full bg-error text-on-error flex items-center justify-center shadow" id="btnRemoveImage" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<span class="font-code-tabular text-code-tabular text-on-surface font-semibold truncate max-w-xs" id="previewImageName"></span>
+<span class="font-body-sm text-[11px] text-[#059669] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Pronto para envio ao bucket
+              </span>
+</div>
+</div>
+</div>
+<!-- Nome do Produto -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="inputProductName">Nome do Produto *</label>
+<input class="px-4 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-inner" id="inputProductName" placeholder="Ex.: Teclado Mecânico RGB Switch Blue" required="" type="text"/>
+</div>
+<!-- Categoria Dropdown (Tabela categorias) -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="selectProductCategory">Categoria Vinculada (FK) *</label>
+<div class="relative">
+<select class="w-full appearance-none px-4 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-inner cursor-pointer" id="selectProductCategory" required="">
+<option disabled="" selected="" value="">Selecione uma categoria do catálogo</option>
+<option value="Eletrônicos">Eletrônicos (Tecnologia & Acessórios)</option>
+<option value="Casa">Casa (Cozinha, Decoração & Utilidades)</option>
+<option value="Esporte">Esporte (Futebol, Academia & Lazer)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Preço e Estoque Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="inputProductPrice">Preço de Venda (R$) *</label>
+<div class="relative">
+<span class="absolute left-3.5 top-1/2 -translate-y-1/2 font-label-md text-label-md text-on-surface-variant font-semibold">R$</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-inner" id="inputProductPrice" min="0" placeholder="199,90" required="" step="0.01" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="inputProductStock">Estoque Inicial (Unid.) *</label>
+<input class="px-4 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-inner" id="inputProductStock" min="1" placeholder="50" required="" type="number"/>
+</div>
+</div>
+<!-- Descrição Detalhada -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="inputProductDesc">Descrição Técnica</label>
+<textarea class="px-4 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-inner resize-none" id="inputProductDesc" placeholder="Especificações de medidas, materiais e instruções de garantia para o comprador..." rows="3"></textarea>
+</div>
+<!-- RLS & Informações de Segurança -->
+<div class="p-space-md bg-surface-container rounded-xl flex items-start gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-secondary mt-0.5">lock_clock</span>
+<div class="flex flex-col font-body-sm text-body-sm">
+<span class="font-semibold text-on-surface">Segurança de Dados Ativa</span>
+<span>A gravação é validada pela política RLS (Row Level Security). O usuário lojista autenticado terá autoridade total para editar e gerenciar suas fotos.</span>
+</div>
+</div>
+</form>
+<!-- Drawer Footer Actions -->
+<div class="px-space-xl py-space-md bg-surface-container-low flex items-center justify-end gap-space-sm">
+<button class="px-space-lg py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-medium transition-colors" id="btnCancelDrawer" type="button">
+          Cancelar
+        </button>
+<button class="flex items-center gap-space-xs px-space-xl py-2.5 rounded-lg bg-secondary-container hover:bg-[#f08804] text-[#111827] font-headline-sm text-headline-sm font-semibold shadow-sm hover:shadow transition-all" id="btnSubmitProduct" type="button">
+<span class="material-symbols-outlined text-[18px]">cloud_upload</span>
+<span>Gravar Produto</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Feedback Container -->
+<div class="fixed bottom-6 right-6 z-50 bg-primary-container text-on-primary px-space-lg py-space-md rounded-xl shadow-xl flex items-center gap-space-sm transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toastNotification">
+<span class="material-symbols-outlined text-[#10b981] text-[24px]">check_circle</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold" id="toastTitle">Produto Atualizado</span>
+<span class="font-body-sm text-body-sm text-on-primary-container" id="toastMsg">A foto foi sincronizada no bucket fotos-produtos.</span>
+</div>
+</div>
+</div>
+<script>
+  (function initAgenStoreAdmin() {
+    const openBtn = document.getElementById('openDrawerBtn');
+    const closeBtn = document.getElementById('closeDrawerBtn');
+    const cancelBtn = document.getElementById('btnCancelDrawer');
+    const drawerOverlay = document.getElementById('productDrawerOverlay');
+    const drawerPanel = document.getElementById('productDrawerPanel');
+    const submitBtn = document.getElementById('btnSubmitProduct');
+    const newProductForm = document.getElementById('newProductForm');
+
+    const fileInput = document.getElementById('imageFileInput');
+    const dropzoneEmpty = document.getElementById('dropzoneEmptyState');
+    const dropzonePreview = document.getElementById('dropzonePreviewState');
+    const previewImg = document.getElementById('previewImageElement');
+    const previewName = document.getElementById('previewImageName');
+    const removeImgBtn = document.getElementById('btnRemoveImage');
+
+    const searchInput = document.getElementById('productSearchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const statusFilter = document.getElementById('statusFilter');
+    const tableBody = document.getElementById('productTableBody');
+    const refreshBtn = document.getElementById('btnRefreshTable');
+
+    const toast = document.getElementById('toastNotification');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMsg = document.getElementById('toastMsg');
+
+    function showToast(title, message) {
+      toastTitle.textContent = title;
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 4000);
+    }
+
+    function openDrawer() {
+      drawerOverlay.classList.remove('pointer-events-none');
+      drawerOverlay.classList.remove('opacity-0');
+      drawerPanel.classList.remove('translate-x-full');
+    }
+
+    function closeDrawer() {
+      drawerOverlay.classList.add('opacity-0');
+      drawerPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        drawerOverlay.classList.add('pointer-events-none');
+      }, 300);
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeDrawer);
+
+    drawerOverlay.addEventListener('click', (e) => {
+      if (e.target === drawerOverlay) {
+        closeDrawer();
+      }
+    });
+
+    // File Upload handling inside Drawer
+    if (fileInput) {
+      fileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            previewImg.src = evt.target.result;
+            previewName.textContent = file.name;
+            dropzoneEmpty.classList.add('hidden');
+            dropzonePreview.classList.remove('hidden');
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+
+    if (removeImgBtn) {
+      removeImgBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        fileInput.value = '';
+        previewImg.src = '';
+        previewName.textContent = '';
+        dropzonePreview.classList.add('hidden');
+        dropzoneEmpty.classList.remove('hidden');
+      });
+    }
+
+    // Submit new Product handler
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function() {
+        const name = document.getElementById('inputProductName').value.trim();
+        const cat = document.getElementById('selectProductCategory').value;
+        const price = document.getElementById('inputProductPrice').value.trim();
+        const stock = document.getElementById('inputProductStock').value.trim();
+        const desc = document.getElementById('inputProductDesc').value.trim();
+
+        if (!name || !cat || !price || !stock) {
+          alert('Por favor preencha todos os campos obrigatórios (*).');
+          return;
+        }
+
+        const formattedPrice = parseFloat(price).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        const fileName = previewName.textContent || 'novo-produto.webp';
+
+        // Add dynamic row to table
+        const newRow = document.createElement('tr');
+        newRow.className = 'hover:bg-surface-container-low/70 transition-colors group animate-fade-in';
+        newRow.setAttribute('data-category', cat);
+        newRow.setAttribute('data-status', 'ativo');
+        newRow.setAttribute('data-name', name);
+
+        newRow.innerHTML = `
+          <td class="py-space-md px-space-lg align-middle">
+            <div class="relative w-14 h-14 rounded-lg bg-surface-container overflow-hidden group-hover:scale-105 transition-transform flex items-center justify-center shadow-inner">
+              <img 
+                src="${previewImg.src || 'placeholder'}" 
+                data-alt="Commercial presentation photograph for ${name} on studio lighting background." 
+                class="w-full h-full object-cover" 
+                alt="${name}"
+              />
+              <span class="absolute bottom-0 right-0 bg-primary/80 text-on-primary font-code-tabular text-[9px] px-1 rounded-tl">webp</span>
+            </div>
+          </td>
+          <td class="py-space-md px-space-md align-middle">
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">${name}</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">${desc || 'Sem descrição cadastrada'}</span>
+              <span class="font-code-tabular text-[11px] text-outline mt-0.5">storage: fotos-produtos/${fileName.toLowerCase().replace(/\\s+/g, '-')}</span>
+            </div>
+          </td>
+          <td class="py-space-md px-space-md align-middle">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface font-medium">
+              <span class="material-symbols-outlined text-[13px] text-on-surface-variant">label</span>
+              ${cat}
+            </span>
+          </td>
+          <td class="py-space-md px-space-md align-middle">
+            <span class="font-price-display-sm text-price-display-sm text-on-surface">R$ ${formattedPrice}</span>
+            <span class="block font-label-sm text-label-sm text-on-surface-variant">Margem 45%</span>
+          </td>
+          <td class="py-space-md px-space-md align-middle">
+            <div class="flex flex-col gap-1 w-32">
+              <div class="flex justify-between items-center">
+                <span class="font-code-tabular text-code-tabular font-bold text-on-surface">${stock} unid.</span>
+                <span class="font-label-sm text-[10px] text-[#059669] font-semibold">Novo</span>
+              </div>
+              <div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+                <div class="h-full bg-[#10b981] rounded-full" style="width: 60%;"></div>
+              </div>
+              <span class="font-body-sm text-[11px] text-outline-variant flex items-center gap-1">
+                <span class="material-symbols-outlined text-[12px] text-[#059669]">bolt</span> Trigger Ativo
+              </span>
+            </div>
+          </td>
+          <td class="py-space-md px-space-md align-middle">
+            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-[#ecfdf5] text-[#065f46]">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
+              Ativo
+            </span>
+          </td>
+          <td class="py-space-md px-space-lg align-middle text-right">
+            <div class="flex items-center justify-end gap-space-xs">
+              <button type="button" title="Gerenciar Foto no Storage" class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+              </button>
+              <button type="button" title="Editar Produto" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[18px]">edit</span>
+              </button>
+              <button type="button" title="Pausar Vendas" class="p-1.5 rounded-lg text-on-surface-variant hover:text-secondary hover:bg-surface-container transition-colors">
+                <span class="material-symbols-outlined text-[18px]">pause_circle</span>
+              </button>
+              <button type="button" title="Excluir Registro" class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors">
+                <span class="material-symbols-outlined text-[18px]">delete</span>
+              </button>
+            </div>
+          </td>
+        `;
+
+        tableBody.prepend(newRow);
+
+        // Reset form & drawer
+        newProductForm.reset();
+        previewImg.src = '';
+        dropzonePreview.classList.add('hidden');
+        dropzoneEmpty.classList.remove('hidden');
+        closeDrawer();
+
+        showToast('Produto Salvo com Sucesso', `Gravado em public.produtos com upload para fotos-produtos/${fileName}.`);
+      });
+    }
+
+    // Live search & filters
+    function filterProducts() {
+      const query = (searchInput.value || '').toLowerCase().trim();
+      const selectedCategory = categoryFilter.value;
+      const selectedStatus = statusFilter.value;
+
+      const rows = tableBody.querySelectorAll('tr');
+      rows.forEach(row => {
+        const name = (row.getAttribute('data-name') || '').toLowerCase();
+        const cat = row.getAttribute('data-category') || '';
+        const status = row.getAttribute('data-status') || '';
+
+        const matchesQuery = !query || name.includes(query);
+        const matchesCategory = selectedCategory === 'all' || cat === selectedCategory;
+        const matchesStatus = selectedStatus === 'all' || status === selectedStatus;
+
+        if (matchesQuery && matchesCategory && matchesStatus) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    if (searchInput) searchInput.addEventListener('input', filterProducts);
+    if (categoryFilter) categoryFilter.addEventListener('change', filterProducts);
+    if (statusFilter) statusFilter.addEventListener('change', filterProducts);
+
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', function() {
+        refreshBtn.classList.add('animate-spin');
+        setTimeout(() => {
+          refreshBtn.classList.remove('animate-spin');
+          showToast('Sincronização Concluída', '4 produtos validados com o banco Supabase.');
+        }, 600);
+      });
+    }
+  })();
+</script></main></div></body></html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>AgenStore - Plataforma E-commerce</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#45474b", "on-tertiary-fixed": "#3d0600", "on-tertiary-container": "#e94e2b", "on-tertiary-fixed-variant": "#8b1a00", "on-secondary": "#ffffff", "on-primary": "#ffffff", "inverse-surface": "#2e3132", "surface-variant": "#e1e2e4", "on-surface": "#191c1e", "on-secondary-fixed": "#2a1700", "surface-container-low": "#f3f4f6", "surface-container-highest": "#e1e2e4", "tertiary-fixed-dim": "#ffb4a3", "secondary-fixed": "#ffddb7", "background": "#f8f9fb", "secondary-fixed-dim": "#fbba67", "on-tertiary": "#ffffff", "on-primary-fixed": "#161c24", "on-error-container": "#93000a", "primary": "#000000", "primary-fixed": "#dde3ee", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#653e00", "on-background": "#191c1e", "secondary-container": "#febd69", "on-primary-container": "#7e848e", "on-primary-fixed-variant": "#414750", "primary-container": "#161c24", "tertiary": "#000000", "surface-tint": "#595f68", "secondary": "#845403", "error": "#ba1a1a", "surface-container-high": "#e7e8ea", "on-error": "#ffffff", "surface-bright": "#f8f9fb", "tertiary-container": "#3d0600", "inverse-on-surface": "#f0f1f3", "surface-container-lowest": "#ffffff", "on-secondary-container": "#774b00", "surface-container": "#edeef0", "surface": "#f8f9fb", "primary-fixed-dim": "#c1c7d2", "inverse-primary": "#c1c7d2", "outline": "#75777c", "surface-dim": "#d9dadc", "outline-variant": "#c5c6cb", "tertiary-fixed": "#ffdad2" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-base": "1rem", "gutter": "1rem", "space-lg": "1.5rem", "space-2xl": "3rem", "space-md": "0.75rem", "space-2xs": "0.125rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "space-xl": "2rem", "margin-tablet": "1.5rem", "margin": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.25rem" }, "fontFamily": { "body-sm": ["Inter"], "price-display-sm": ["Inter"], "body-lg": ["Inter"], "price-display": ["Inter"], "code-tabular": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "label-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg": ["Inter"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "price-display-sm": ["18px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "price-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "code-tabular": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["16px", { "lineHeight": "22px", "letterSpacing": "0", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 right-0 z-50 shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="h-16 bg-primary-container text-on-primary px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm"><img alt="AgenStore Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WYW7_7TXF9ZKGZoHQ_aHhrK958wiNqS6kCGHzEkFrICLPb5CydaEoYa83zLuKXX-uiLN8v28wjcKysHxE8fhYzVwJxwZzlFJRVhM11f89U1gljGirDkmyt5ES6sfZrnWpIwawGz7nXHsoOecW3ce1BQgXDxppikIImqOpg8c7G0rlwKjwtttmY78sEVhu5RIALDiYoAfP1Kresy6XCaar50uTk7wLMw4lnshDpGX7xcizZZBlUApjW1sg"/><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-primary">AgenStore</span></div><div class="hidden xl:flex items-center gap-space-xs text-on-primary-container hover:text-on-primary cursor-pointer transition-colors pl-space-sm"><span class="material-symbols-outlined text-[20px]">location_on</span><div class="flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-primary-container leading-none">Enviar para</span><span class="font-label-md text-label-md text-on-primary font-medium leading-none">São Paulo, CEP 01001-000</span></div></div></div><div class="flex-1 max-w-3xl mx-space-md"><div class="flex items-center h-10 w-full rounded-lg overflow-hidden bg-surface-container-lowest shadow-[0_1px_2px_rgba(0,0,0,0.05)]"><button class="h-full bg-surface-container-high px-space-md font-label-md text-label-md text-on-surface-variant flex items-center gap-space-2xs border-r border-outline-variant hover:bg-surface-variant transition-colors" type="button"><span>Todos</span><span class="material-symbols-outlined text-[16px]">arrow_drop_down</span></button><input class="w-full h-full px-space-md font-body-md text-body-md text-on-surface bg-transparent focus:outline-none placeholder:text-on-surface-variant" placeholder="Pesquisar na AgenStore, produtos, marcas..." type="text"/><button class="h-full px-space-lg bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim transition-colors flex items-center justify-center font-label-md" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button></div></div><div class="flex items-center gap-space-lg shrink-0"><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-secondary-container font-semibold"><a class="font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="ofertas-do-dia" href="#">Ofertas do Dia</a><a class="font-label-md text-label-md text-on-primary-container hover:text-on-primary transition-colors" data-path="categorias" href="#">Categorias</a></nav><div class="flex items-center gap-space-md pl-space-sm"><div class="flex items-center gap-space-xs cursor-pointer text-left"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZaYnjtVb8FKUh9tl5-ywY-mQ-F07fKWV0weZee1VjExvoZqvP-kAGVSn4qbjyCCkUZuf4iQ0Lb6sTbCwd55QajE3HGjJiOwOPGuFn-rRM_qIW2kJBHHiedTxGhX4Km72L6RMk5-c6lVCH7rKSYAUqkHVJM9xHDTD7DbTUdM3hWWE40rfguvNK1IjYNBlArf0QM6S26H0sPJf_bKjdBlchfTa1BQPKUpYIEHfgV3RYyOUwvTOTf1hr"/><div class="hidden md:flex flex-col"><span class="font-label-sm text-label-sm text-on-primary-container leading-none">Olá, Cliente</span><span class="font-label-md text-label-md text-on-primary font-medium leading-none">Minha Conta</span></div></div><a class="relative flex items-center gap-space-2xs text-on-primary hover:text-secondary-container transition-colors py-space-xs px-space-sm" data-path="carrinho" href="#"><span class="material-symbols-outlined text-[26px]">shopping_cart</span><span class="absolute -top-1 right-1 bg-on-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-xs py-0.5 rounded-full font-bold leading-none">3</span><span class="hidden md:inline font-label-md text-label-md font-bold text-on-primary mt-1">Carrinho</span></a></div></div></div><div class="h-10 bg-inverse-surface text-inverse-on-surface px-margin-desktop flex items-center justify-between shadow-inner"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-2xs cursor-pointer font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container transition-colors font-medium mr-space-sm"><span class="material-symbols-outlined text-[18px]">menu</span><span>Todos</span></div><nav class="flex items-center gap-space-lg overflow-x-auto py-space-2xs" data-active-classes="text-secondary-container font-semibold"><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="eletronicos" href="#">Eletrônicos</a><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="casa-e-cozinha" href="#">Casa</a><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="esportes" href="#">Esportes</a><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="cupons-e-promocoes" href="#">Cupons & Promoções</a><a class="font-label-md text-label-md text-inverse-on-surface hover:text-secondary-container whitespace-nowrap transition-colors" data-path="mais-vendidos" href="#">Mais Vendidos</a></nav></div><div class="flex items-center shrink-0"><a class="flex items-center gap-space-2xs px-space-md py-1 rounded bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim transition-colors font-label-md text-label-md font-semibold" data-path="admin-dashboard" href="#"><span class="material-symbols-outlined text-[16px]">storefront</span><span>Alternar para Painel Admin (Loja)</span></a></div></div></header><main class="w-full pt-[104px] pb-space-2xl bg-background flex-1 max-w-[1440px] mx-auto px-margin-desktop"><div class="flex flex-col w-full">
+<!-- Top Notification Pill / LocalStorage Sync Status -->
+<div class="w-full mb-space-base bg-surface-container-high text-on-surface px-space-base py-space-sm rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">sync_saved_locally</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-label-md">Sincronização Ativa:</strong> Seu carrinho, preferências e cupons aplicados são salvos automaticamente no seu navegador via LocalStorage.
+      </span>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Sessão Local Conectada</span>
+</div>
+</div>
+<!-- Hero Feature Carousel / Banner -->
+<section class="relative w-full rounded-xl overflow-hidden shadow-md bg-gradient-to-r from-primary-container via-[#1f2b3b] to-primary-container text-on-primary mb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[360px] items-center">
+<!-- Left Content / Deals Spotlight -->
+<div class="lg:col-span-7 p-space-base md:p-space-xl flex flex-col gap-space-md z-10">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="bg-on-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-sm py-1 rounded font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">bolt</span> Oferta Relâmpago
+          </span>
+<span class="bg-surface-container-lowest/15 backdrop-blur-sm text-on-primary font-label-sm text-label-sm px-space-sm py-1 rounded">
+            Destaques de Tecnologia & Fitness
+          </span>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<span class="text-secondary-container font-label-md text-label-md tracking-wider uppercase font-semibold">Semana de Ofertas AgenStore</span>
+<h1 class="font-headline-xl text-headline-xl text-on-primary font-bold leading-tight">
+            Até 50% OFF em Eletrônicos e Esportes
+          </h1>
+<p class="font-body-md text-body-md text-on-primary-container max-w-xl">
+            Aproveite frete turbo nacional, garantia de satisfação AgenStore e parcelamento sem juros nos maiores destaques da temporada.
+          </p>
+</div>
+<!-- Deal Countdown Badge -->
+<div class="flex flex-wrap items-center gap-space-base mt-space-xs">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest/10 backdrop-blur-md px-space-base py-space-xs rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">timer</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase leading-none">Termina em:</span>
+<span class="font-code-tabular text-code-tabular text-secondary-container font-bold tracking-wider leading-tight" id="countdown-timer">08h 42m 15s</span>
+</div>
+</div>
+<a class="h-10 px-space-lg bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim rounded font-label-md text-label-md font-bold inline-flex items-center gap-space-2xs shadow-sm transition-transform active:scale-95" href="#ofertas-grid">
+<span>Ver Ofertas do Dia</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right Visual Image / Presentation -->
+<div class="lg:col-span-5 relative h-64 lg:h-full w-full flex items-center justify-center p-space-base">
+<div class="relative w-full max-w-md h-64 rounded-xl overflow-hidden shadow-lg bg-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="Modern premium matte black wireless noise-canceling headphones suspended gracefully in mid-air alongside a stylish smart fitness sports watch and water bottle, bathed in high-contrast professional studio lighting with warm amber accents, commercial retail product photograph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsdDsCV1B5RUVSUtn_Aejmz6cSsPTL-IgQCD0ckZ6OqpkGL7axkkfB_U5lLTPSBA7bzIBHSBy5tXZH9vMoNTsQuCLCx1hflCUIPCdUxhCPydrA96Ds6JN4EoTbgaIx64HAlXUnPDeRMKjneBgODy9toM7YLND5IjgEjAJed1cPDTrne52bfz3GNCOc303iYoQj8Gv0t9DTuyv7DerEV-bUZIEZ3sYdC4YjmS-Tur-F_ZyFyjoD2gk-"/>
+<div class="absolute bottom-3 right-3 bg-primary-container/90 backdrop-blur-sm text-on-primary px-space-sm py-1 rounded shadow text-center">
+<span class="font-label-sm text-label-sm text-on-primary-container block leading-tight">A partir de</span>
+<span class="font-price-display-sm text-price-display-sm text-secondary-container leading-none">R$ 89,90</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Banner de Cupons Disponíveis -->
+<section class="w-full mb-space-xl">
+<div class="bg-surface-container-lowest rounded-xl p-space-base shadow-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">sell</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Economia Imediata</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Cupons de Desconto Disponíveis Hoje</h2>
+</div>
+</div>
+<!-- Coupon Badges Group -->
+<div class="flex flex-wrap items-center gap-space-md w-full md:w-auto">
+<!-- Coupon 1 -->
+<div class="flex-1 md:flex-none flex items-center justify-between bg-surface-container-low px-space-base py-space-xs rounded-lg gap-space-base">
+<div class="flex flex-col">
+<span class="font-code-tabular text-code-tabular font-bold text-on-surface tracking-wider">BEMVINDO10</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10% OFF na 1ª compra</span>
+</div>
+<button class="px-space-md py-1.5 bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim rounded font-label-md text-label-md font-semibold transition-all active:scale-95 flex items-center gap-1" onclick="copyCoupon('BEMVINDO10', this)">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copiar</span>
+</button>
+</div>
+<!-- Coupon 2 -->
+<div class="flex-1 md:flex-none flex items-center justify-between bg-surface-container-low px-space-base py-space-xs rounded-lg gap-space-base">
+<div class="flex flex-col">
+<span class="font-code-tabular text-code-tabular font-bold text-on-surface tracking-wider">FRETE5</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">R$ 5 OFF no frete</span>
+</div>
+<button class="px-space-md py-1.5 bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim rounded font-label-md text-label-md font-semibold transition-all active:scale-95 flex items-center gap-1" onclick="copyCoupon('FRETE5', this)">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copiar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Grid de Categorias Rápidas -->
+<section class="w-full mb-space-xl">
+<div class="flex items-center justify-between mb-space-base">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-5 bg-secondary-container rounded-sm"></span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Categorias Populares</h2>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:underline font-semibold flex items-center gap-1" href="#">
+<span>Explorar departamento</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-base">
+<!-- Category 1: Eletrônicos -->
+<a class="group bg-surface-container-lowest p-space-base rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center relative overflow-hidden" href="#">
+<span class="absolute top-2 right-2 bg-on-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold">
+          Promo Ativa
+        </span>
+<div class="w-24 h-24 mb-space-sm rounded-lg overflow-hidden flex items-center justify-center bg-surface-container-low group-hover:scale-105 transition-transform">
+<img class="w-full h-full object-cover" data-alt="Compact sleek portable bluetooth gadget, smart headphones and digital voice speaker on clean crisp white background, studio catalog lighting, minimalist consumer tech styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBumOzqpoKjfnjF77G-jeZE0lNI3CYYh3kepcrMm8kkilLC1q6dsnA-KUIyHki2jTiWYFjOfuAl8xEajSjwxpaDKdgz2JG95KHWhXPvMCijvUiBYiTqs4SiECllAUgsRm7Pmu0qKt4M-LZlYjimZgxjsMXeHtxghh-fHGiARh4ptmAj24wHTe7T7BvcwMkbH8vFTrdEVGxoOr0KQjzk1wm5kRZfLFXuqlTiPk25CgxBexbNXRoKBgrL"/>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">Eletrônicos</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Smartphones, Fones & Acessórios</span>
+</a>
+<!-- Category 2: Casa & Cozinha -->
+<a class="group bg-surface-container-lowest p-space-base rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center relative overflow-hidden" href="#">
+<div class="w-24 h-24 mb-space-sm rounded-lg overflow-hidden flex items-center justify-center bg-surface-container-low group-hover:scale-105 transition-transform">
+<img class="w-full h-full object-cover" data-alt="Polished ceramic kitchen cookware, modern pan set and minimalist culinary utensils resting on modern clean marble countertop with bright kitchen natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABJp7UNW5My7hb8l3lkMZ5WT4YGq8AXKFRjdAkx2wMOcAGuKn4O11wP1nj5o48KFSFxDSW55zgu0EjZdfsUOfrTCAY-w-7qhRuuxI7IX86STDIF6Dima2i9aiNpjuAduaAvb6foxuAMY_Pd6Z7EuPObWxCAw_lLU4tnZubekz8p2sbLsYj4-P-_KsqxP9Pv9BU_2MLVmFVm-cGsHiNbulGEuA7omaVoeOOySIcJ-Yztn9U2MoiZXeg"/>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">Casa & Cozinha</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Eletroportáteis & Decoração</span>
+</a>
+<!-- Category 3: Esporte & Fitness -->
+<a class="group bg-surface-container-lowest p-space-base rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center relative overflow-hidden" href="#">
+<span class="absolute top-2 right-2 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold">
+          -15% OFF
+        </span>
+<div class="w-24 h-24 mb-space-sm rounded-lg overflow-hidden flex items-center justify-center bg-surface-container-low group-hover:scale-105 transition-transform">
+<img class="w-full h-full object-cover" data-alt="Pro match football gear, official textured soccer ball and athletic gym equipment on pristine light gray studio staging with subtle shadow detailing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBjjd8bBHqSlqd9Vz-Z9oGC9_vo0Nu9z9Q_gK3lJVPu1FZXKWFUi-cAw24s06ucc3xgOszPuOpq1QH8VhkaaQYh9q6v0ewOPQnFmWPayJEAgQrTm7Uo4ZJWgMbA250uANtxMeYPuNFhpAe8RSP6GXw12VXOMAePEcjqDpo5wuZzVJp_RwNdQjgKzajL3rzTcfsI0XrkvQelxIWOKE0iTw0uJRSMuy41ievXxF4NZzXaPIqpmumiT3C"/>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">Esportes & Lazer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Futebol, Treino & Ar Livre</span>
+</a>
+<!-- Category 4: Ofertas Relâmpago -->
+<a class="group bg-surface-container-lowest p-space-base rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center relative overflow-hidden" href="#">
+<div class="w-24 h-24 mb-space-sm rounded-lg bg-surface-container-high text-on-tertiary-container flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">flash_on</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-secondary transition-colors">Ofertas Relâmpago</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Descontos por tempo limitado</span>
+</a>
+</div>
+</section>
+<!-- Section 4: Vitrine de Ofertas do Dia & Promoções com Expiração -->
+<section class="w-full mb-space-2xl" id="ofertas-grid">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-space-base gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-tertiary-container text-[22px]">local_fire_department</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Ofertas do Dia & Promoções com Expiração</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Preços especiais validados pelo catálogo de promoções ativas da AgenStore</p>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-high px-space-md py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">update</span>
+<span>Atualizado em tempo real</span>
+</div>
+</div>
+<!-- Product Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-base">
+<!-- Card 1: Fone Bluetooth (Oferta Relâmpago com estoque & timer) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-base flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative group">
+<div>
+<!-- Tags Header -->
+<div class="flex items-center justify-between mb-space-sm">
+<span class="bg-on-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold uppercase tracking-wider flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">flash_on</span> -20% OFF
+            </span>
+<span class="text-on-tertiary-container font-label-sm text-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Restam 7 dias
+            </span>
+</div>
+<!-- Product Image Container -->
+<div class="w-full aspect-square bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center mb-space-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High fidelity over-ear matte black wireless bluetooth headphones with soft memory foam ear cushions, isolated on clean pure light studio background, commercial e-commerce product photograph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0kUUxcygKAgfIapfWAPFlS3VdgVnFxJ5zYcS5DO4vjjZjEDQD8HFNwRbMqrFp3qEsotHwHkCN2M6t_pPh8Vs91izYwfkBobYthoDlrbpFz7OYc3Huab-SZE-iE-URcnuK_QgUNNbw0FRJ9_tteG-nCUTUEWq7wg33FQMV_8vsNLLqOYb18nDwTJQapbEHvYkV6CJbL0xCghmxEX5zOtlX-0rUfFy2g4zlGy9AQ1QjC-FdTZieqbp6"/>
+<span class="absolute bottom-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface font-label-sm text-label-sm px-space-xs py-0.5 rounded shadow-sm">
+              Envio AgenStore Full
+            </span>
+</div>
+<!-- Product Title & Rating -->
+<div class="flex flex-col gap-space-2xs mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold line-clamp-2 leading-snug">
+              Fone de Ouvido Bluetooth Sem Fio PureBass com Cancelamento de Ruído
+            </h3>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">(412 avaliações)</span>
+</div>
+</div>
+<!-- Pricing Block -->
+<div class="flex flex-col mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through">R$ 162,38</span>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-1.5 rounded font-bold">-20%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">R$</span>
+<span class="font-price-display text-price-display text-on-surface font-bold">129,90</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Em até 3x de R$ 43,30 sem juros</span>
+</div>
+<!-- Stock Left Progress Bar -->
+<div class="flex flex-col gap-1 mb-space-md">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Estoque promocional</span>
+<span class="font-semibold text-on-surface">50 un. restantes</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-[40%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Add to Cart CTA -->
+<button class="w-full h-10 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container rounded font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-2xs shadow-sm active:scale-95" onclick="handleAddToCart('Fone Bluetooth PureBass', 129.90)">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+<span>Adicionar ao Carrinho</span>
+</button>
+</div>
+<!-- Card 2: Mouse Wireless -->
+<div class="bg-surface-container-lowest rounded-xl p-space-base flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative group">
+<div>
+<!-- Tags Header -->
+<div class="flex items-center justify-between mb-space-sm">
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold uppercase">
+              Mais Vendido
+            </span>
+<span class="text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Frete Rápido
+            </span>
+</div>
+<!-- Product Image Container -->
+<div class="w-full aspect-square bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center mb-space-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Ergonomic sleek wireless optical computer mouse in graphite finish, placed smoothly on clean minimal desk setup, studio catalog commercial photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDefQxpxYn5Y1Sp3Vv5cPxTTwzv9PmW40njNh07R8Q3dwdsQL2NUujBVJP8YprGO2Mo5ORW-f3yWbAhrQYbmknwbZXiF0u4bVh-M0oTy_AmvQ78AmZ5dW0tRlNi6_GgzzBScI0ch-4ljkoYaizUB8Qf6iav4kqOKU2cJgIymvOvc8CKG0nPobPBMDtyn1hqB8vugZM-eGLUdbxOATYoDKL4Qm_Fe_UqAypPYhc3M_ZO4-sSl_kNMRe8"/>
+</div>
+<!-- Product Title & Rating -->
+<div class="flex flex-col gap-space-2xs mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold line-clamp-2 leading-snug">
+              Mouse Wireless Ergonômico 2.4GHz com Clique Silencioso
+            </h3>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">4.8 (890)</span>
+</div>
+</div>
+<!-- Pricing Block -->
+<div class="flex flex-col mb-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">R$</span>
+<span class="font-price-display text-price-display text-on-surface font-bold">59,90</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">À vista no Pix ou boleto</span>
+</div>
+<!-- Stock Left Info -->
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mb-space-md">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>120 unidades em estoque central</span>
+</div>
+</div>
+<!-- Add to Cart CTA -->
+<button class="w-full h-10 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container rounded font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-2xs shadow-sm active:scale-95" onclick="handleAddToCart('Mouse Wireless Ergonômico', 59.90)">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+<span>Adicionar ao Carrinho</span>
+</button>
+</div>
+<!-- Card 3: Jogo de Panelas -->
+<div class="bg-surface-container-lowest rounded-xl p-space-base flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative group">
+<div>
+<!-- Tags Header -->
+<div class="flex items-center justify-between mb-space-sm">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold uppercase">
+              Casa & Cozinha
+            </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm font-semibold">
+              Garantia 1 Ano
+            </span>
+</div>
+<!-- Product Image Container -->
+<div class="w-full aspect-square bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center mb-space-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Complete five piece ceramic nonstick cookware set in deep charcoal and brass accents arranged together on kitchen table, clean bright commercial product photograph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiPFKcqGrXWxCj29ktFJD-SjSNJ50fOzcDDi9ywLVRrCcUwX1CMLQuMs3DersM7fGWGGM4w7JQDuOie0KKKjTw-FbmV_CdVJSawOkrqiLT3r74dVl8TOQ11FWS1HemnFLOwWMD2BoUKPCJreg-Zo9h6RXgF-1gNAwGAoobutxb2igkYOAgfx2knjP8QlOQXibG_G-1qBbNo2NgEY26gOwCYwHXmE9JuQxax8uB2shE40MEq7mzA7co"/>
+</div>
+<!-- Product Title & Rating -->
+<div class="flex flex-col gap-space-2xs mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold line-clamp-2 leading-snug">
+              Jogo de Panelas Cerâmica Antiaderente 5 Peças com Tampas de Vidro
+            </h3>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">4.7 (184)</span>
+</div>
+</div>
+<!-- Pricing Block -->
+<div class="flex flex-col mb-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">R$</span>
+<span class="font-price-display text-price-display text-on-surface font-bold">249,90</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Em até 10x de R$ 24,99 sem juros</span>
+</div>
+<!-- Stock Left Info -->
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mb-space-md">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Apenas 30 unidades restantes</span>
+</div>
+</div>
+<!-- Add to Cart CTA -->
+<button class="w-full h-10 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container rounded font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-2xs shadow-sm active:scale-95" onclick="handleAddToCart('Jogo de Panelas Cerâmica 5 Pçs', 249.90)">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+<span>Adicionar ao Carrinho</span>
+</button>
+</div>
+<!-- Card 4: Bola de Futebol Oficial (Categoria Esporte com -15% OFF) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-base flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative group">
+<div>
+<!-- Tags Header -->
+<div class="flex items-center justify-between mb-space-sm">
+<span class="bg-on-tertiary-container text-on-tertiary font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold uppercase tracking-wider">
+              -15% OFF
+            </span>
+<span class="text-secondary font-label-sm text-label-sm font-semibold">
+              Promoção Esportes
+            </span>
+</div>
+<!-- Product Image Container -->
+<div class="w-full aspect-square bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center mb-space-md relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Official match regulation football with aerodynamic textured surface panels in white, neon orange, and deep navy detailing, displayed on soft shadow studio pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlLjrPJpnS364udjY_SsnoUKR_tWbG0Tr0avjbesZlK90_B9ocNTgyK8jg5p-ko83gBz02OC75QimQU6VIs4toq5qxANne7a03MYkLk66SjvXP9Swj5u6cu3ALpveD0tN-YsqOwWEp_Z9dVRlKVw4SpH7Dgp8J4Q2e6gDcLI9oQNfwbmFJ_lebiv9GKLU2h3EL7BT7u9zCf3H3UT4TyUIZFVDcl39FYu5w-HFepPxLHGs6LNYwpuvw"/>
+<span class="absolute top-2 left-2 bg-primary-container text-on-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded shadow-sm font-semibold">
+              Oficial CBF
+            </span>
+</div>
+<!-- Product Title & Rating -->
+<div class="flex flex-col gap-space-2xs mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold line-clamp-2 leading-snug">
+              Bola de Futebol de Campo Oficial Tamanho 5 Costurada em PU
+            </h3>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">4.9 (340)</span>
+</div>
+</div>
+<!-- Pricing Block -->
+<div class="flex flex-col mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through">R$ 105,76</span>
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-1.5 rounded font-bold">-15%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">R$</span>
+<span class="font-price-display text-price-display text-on-surface font-bold">89,90</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Em até 2x de R$ 44,95 sem juros</span>
+</div>
+<!-- Category promotion badge indicator -->
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mb-space-md">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span>Cupom 'BEMVINDO10' cumulativo</span>
+</div>
+</div>
+<!-- Add to Cart CTA -->
+<button class="w-full h-10 bg-secondary-container hover:bg-secondary-fixed-dim text-on-secondary-container rounded font-label-md text-label-md font-bold transition-colors flex items-center justify-center gap-space-2xs shadow-sm active:scale-95" onclick="handleAddToCart('Bola de Futebol Oficial', 89.90)">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+<span>Adicionar ao Carrinho</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 5: Seção de Benefícios do Ecossistema AgenStore -->
+<section class="w-full mb-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-base">
+<!-- Benefit 1 -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl shadow-sm flex items-center gap-space-base">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Entrega Expressa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rastreamento em tempo real com envio imediato dos centros de distribuição.</span>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl shadow-sm flex items-center gap-space-base">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Compra 100% Segura</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Protegida por Supabase Auth, criptografia ponta a ponta e gateway confiável.</span>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl shadow-sm flex items-center gap-space-base">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">credit_card</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Parcelamento Facilitado</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Em até 10x sem juros no cartão ou desconto adicional instantâneo via Pix.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Feedback Toast for Cart & Coupon Actions -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast-notification">
+<div class="bg-primary-container text-on-primary px-space-base py-space-sm rounded-xl shadow-xl flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" id="toast-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-primary" id="toast-title">Item Adicionado</span>
+<span class="font-body-sm text-body-sm text-on-primary-container" id="toast-desc">Produto salvo no seu carrinho local.</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Countdown Timer Micro-Interaction
+  (function() {
+    let totalSeconds = (8 * 3600) + (42 * 60) + 15;
+    const timerElem = document.getElementById('countdown-timer');
+    if (timerElem) {
+      setInterval(function() {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+          const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+          const seconds = String(totalSeconds % 60).padStart(2, '0');
+          timerElem.textContent = `${hours}h ${minutes}m ${seconds}s`;
+        }
+      }, 1000);
+    }
+  })();
+
+  // Toast Trigger Helper
+  function showToast(title, description, iconName = 'check_circle') {
+    const toast = document.getElementById('toast-notification');
+    const titleEl = document.getElementById('toast-title');
+    const descEl = document.getElementById('toast-desc');
+    const iconEl = document.getElementById('toast-icon');
+
+    if (toast && titleEl && descEl) {
+      titleEl.textContent = title;
+      descEl.textContent = description;
+      if (iconEl) iconEl.textContent = iconName;
+
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2800);
+    }
+  }
+
+  // Copy Coupon handler
+  function copyCoupon(code, btnElement) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(code).then(() => {
+        localStorage.setItem('agenstore_applied_coupon', code);
+        const originalText = btnElement.innerHTML;
+        btnElement.innerHTML = `<span class="material-symbols-outlined text-[16px]">done</span><span>Copiado</span>`;
+        btnElement.classList.add('bg-secondary-fixed');
+
+        showToast('Cupom Copiado!', `Cupom "${code}" salvo e pronto para o checkout.`, 'sell');
+
+        setTimeout(() => {
+          btnElement.innerHTML = originalText;
+          btnElement.classList.remove('bg-secondary-fixed');
+        }, 2200);
+      });
+    } else {
+      localStorage.setItem('agenstore_applied_coupon', code);
+      showToast('Cupom Salvo!', `Cupom "${code}" guardado no seu dispositivo.`, 'sell');
+    }
+  }
+
+  // Cart Add Handler with LocalStorage persistence
+  function handleAddToCart(name, price) {
+    try {
+      const existingCart = JSON.parse(localStorage.getItem('agenstore_cart') || '[]');
+      existingCart.push({ name, price, timestamp: new Date().toISOString() });
+      localStorage.setItem('agenstore_cart', JSON.stringify(existingCart));
+      
+      showToast('Adicionado ao Carrinho!', `${name} foi adicionado à sua sacola.`);
+    } catch (e) {
+      showToast('Adicionado ao Carrinho!', `${name} selecionado com sucesso.`);
+    }
+  }
+</script></main><footer class="w-full bg-surface-container text-on-surface shadow-[0_-1px_6px_rgba(0,0,0,0.03)]"><div class="max-w-[1440px] mx-auto px-margin-desktop pt-space-2xl pb-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl pb-space-xl border-b border-surface-container-high"><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Conheça a AgenStore</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Sobre Nós</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Carreiras & Vagas</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Sustentabilidade</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Assessoria de Imprensa</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Ganhe Dinheiro Conosco</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Venda na AgenStore</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Programa de Afiliados</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Anuncie Seus Produtos</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Logística & Envios Full</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Pagamento & Segurança</span><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Cartões AgenStore</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Pix Instantâneo & Boleto</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Proteção ao Consumidor</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Central de Privacidade</a></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Status da Infraestrutura</span><div class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-lowest shadow-sm"><span class="inline-block w-2.5 h-2.5 rounded-full bg-[#10b981] animate-pulse"></span><span class="font-label-md text-label-md text-on-surface font-semibold">Conectado ao Supabase</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Sincronização em tempo real de inventário, autenticação segura e gateway de checkout integrados.</p><div class="flex items-center gap-space-md text-on-surface-variant pt-space-xs"><span class="material-symbols-outlined text-[20px]" title="Certificado SSL 256-bit">lock</span><span class="material-symbols-outlined text-[20px]" title="Conformidade LGPD">verified_user</span><span class="material-symbols-outlined text-[20px]" title="Pagamento Protegido">shield</span></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant"><div class="flex items-center gap-space-md font-body-sm text-body-sm"><a class="hover:text-on-surface transition-colors" href="#">Condições de Uso</a><a class="hover:text-on-surface transition-colors" href="#">Notificação de Privacidade</a><a class="hover:text-on-surface transition-colors" href="#">Cookies</a><a class="hover:text-on-surface transition-colors" href="#">Acessibilidade</a></div><span class="font-body-sm text-body-sm">© 2024 AgenStore Comércio Eletrônico Ltda. CNPJ 00.000.000/0001-00. Todos os direitos reservados.</span></div></div></footer></body></html>
